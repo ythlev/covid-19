@@ -11,25 +11,25 @@
     </g>
     <g id="g971" font-size="30px" font-family="Verdana" fill="#000">
       <text id="text907" y="1050" x="70" xml:space="preserve">
-        <tspan y="1050" x="70" id="tspan905">≥ 21.46</tspan>
+        <tspan y="1050" x="70" id="tspan905">≥ 21.5</tspan>
       </text>
       <text xml:space="preserve" x="70" y="1000" id="text921">
-        <tspan id="tspan919" x="70" y="1000">≥ 13.74</tspan>
+        <tspan id="tspan919" x="70" y="1000">≥ 13.7</tspan>
       </text>
       <text id="text925" y="950" x="70" xml:space="preserve">
-        <tspan y="950" x="70" id="tspan923">≥ 7.73</tspan>
+        <tspan y="950" x="70" id="tspan923">≥ 7.7</tspan>
       </text>
       <text xml:space="preserve" x="70" y="900" id="text929">
-        <tspan id="tspan927" x="70" y="900">≥ 3.43</tspan>
+        <tspan id="tspan927" x="70" y="900">≥ 3.4</tspan>
       </text>
       <text id="text933" y="850" x="70" xml:space="preserve">
-        <tspan y="850" x="70" id="tspan931">≥ 0.86</tspan>
+        <tspan y="850" x="70" id="tspan931">≥ 0.9</tspan>
       </text>
       <text xml:space="preserve" x="70" y="800" id="text937">
-        <tspan id="tspan935" x="70" y="800">&lt; 0.86</tspan>
+        <tspan id="tspan935" x="70" y="800">&lt; 0.9</tspan>
       </text>
       <text id="text941" y="750" x="20" xml:space="preserve">
-        <tspan y="750" x="20" id="tspan939">2020-03-22</tspan>
+        <tspan y="750" x="20" id="tspan939">2020-03-23</tspan>
       </text>
     </g>
   </g>

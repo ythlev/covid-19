@@ -1,3 +1,4 @@
+# covid-19
 This script generates SVG maps of number of confirmed cases of COVID-19 per million inhabitants by administrative division for various countries. Simply execute build.py.
 
 # Sources
