@@ -23,7 +23,7 @@
     ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "ObjectID"],
     ["Gemeentecode", "Aantal_Besmettingen"]
   ],
-  "UK": [
+  "UK-1": [
     ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "FID"],
     ["GSS_CD", "TotalCases"]
   ],

@@ -32,15 +32,8 @@ with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", en
                 "cases": 0
             }
 
-#with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
-    #meta = json.loads(file.read())
-
-def arcgis(query):
-    global attrs
-    attrs = []
-    with urllib.request.urlopen(query + "&outFields=*&returnGeometry=false&f=pjson") as response:
-        for entry in json.loads(response.read())["features"]:
-            attrs.append(entry["attributes"])
+with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
+    meta = json.loads(file.read())
 
 for country in countries:
     if country == "Taiwan":
@@ -49,88 +42,29 @@ for country in countries:
             for row in data:
                 main["Taiwan"][row["縣市"]]["cases"] += int(row["確定病例數"])
     else:
-        url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/0/query?where={}%3E0".format(meta[country][0])
-        with urllib.request.urlopen(url) as response:
+        if country == "UK":
+            queries = ["UK-1", "UK-2"]
+        else:
+            queries = [country]
+        for query in queries:
+            url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/0/query?where={}%3E0".format(
+                meta[query][0][0],
+                meta[query][0][1],
+                meta[query][0][2],
+                meta[query][0][3],
+            )
+            url = url + "&outFields=*&returnGeometry=false&f=pjson"
             i = 0
-            for entry in json.loads(response.read())["features"]:
-                if meta[country][1][0] in main[country]:
-                    if country == "Japan":
-                        main[country][entry["attributes"][meta[country][1][0]]]["cases"] += 1
-                    else:
-                        main[country][entry["attributes"][meta[country][1][0]]]["cases"] = int(ntry["attributes"][meta[country][1][1]])
-                        i += 1
-                        if country == "US" and i == 54:
-                            break
-
-# countries using worldwide data
-if "US" in main:
-    arcgis("https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/Coronavirus_2019_nCoV_Cases/FeatureServer/1/query?where=ObjectID%3E0")
-    i = 0
-    for place in attrs:
-        if place["Country_Region"] == "US" and place["Province_State"] in main["US"]:
-            main["US"][place["Province_State"]]["cases"] = int(place["Confirmed"])
-            i += 1
-            if i >= 54:
-                break
-
-# general countries
-if "Australia" in main:
-    arcgis("https://services1.arcgis.com/vHnIGBHHqDR6y0CR/arcgis/rest/services/Current_Cases_by_State/FeatureServer/0/query?where=ObjectID%3E0")
-    for place in attrs:
-        if place["ISO_SUB"] in main["Australia"]:
-            main["Australia"][place["ISO_SUB"]]["cases"] = int(place["Cases"])
-
-if "France" in main:
-    arcgis("https://services1.arcgis.com/5PzxEwuu4GtMhqQ6/arcgis/rest/services/Regions_DT_Project_Vue/FeatureServer/0/query?where=ObjectID%3E0")
-    for place in attrs:
-        if place["code_insee"] in main["France"]:
-            main["France"][place["code_insee"]]["cases"] = int(place["nb_cas"])
-
-if "Italy" in main:
-    arcgis("https://services6.arcgis.com/L1SotImj1AAZY1eK/arcgis/rest/services/riepilogo_province/FeatureServer/0/query?where=ObjectID%3E0")
-    for place in attrs:
-        if place["sigla_provincia"] in main["Italy"]:
-            main["Italy"][place["sigla_provincia"]]["cases"] = int(place["totale_casi"])
-
-# countries with data for all places available
-if "Canada" in main:
-    arcgis("https://services9.arcgis.com/pJENMVYPQqZZe20v/arcgis/rest/services/HealthRegionTotals/FeatureServer/0/query?where=ObjectID%3E0")
-    for place in attrs:
-        main["Canada"][place["HR_UID"]]["cases"] = int(place["CaseCount"])
-
-if "Germany" in main:
-    arcgis("https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Kreisgrenzen_2018_mit_Einwohnerzahl/FeatureServer/0/query?where=ObjectID%3E0")
-    for place in attrs:
-        main["Germany"][place["RS"]]["cases"] = int(place["Fallzahlen"])
-
-if "Netherlands" in main:
-    arcgis("https://services.arcgis.com/nSZVuSZjHpEZZbRo/arcgis/rest/services/Aantal_besmettingen_per_1000_inwoners/FeatureServer/0/query?where=ObjectID%3E0")
-    for place in attrs:
-        main["Netherlands"][place["Gemeentecode"]]["cases"] = int(place["Aantal_Besmettingen"])
-
-# countries with case counts only
-if "UK" in main:
-    arcgis("https://services1.arcgis.com/0IrmI40n5ZYxTUrV/arcgis/rest/services/NHSR_Cases/FeatureServer/0/query?where=FID%3E0")
-    for place in attrs:
-        main["UK"][place["GSS_CD"]]["cases"] = int(place["TotalCases"])
-    arcgis("https://services1.arcgis.com/0IrmI40n5ZYxTUrV/arcgis/rest/services/UK_Countries_cases/FeatureServer/0/query?where=FID%3E0")
-    for place in attrs:
-        if place["GSS_CD"] in main["UK"]:
-            main["UK"][place["GSS_CD"]]["cases"] = int(place["TotalCases"])
-
-# countries data for individual cases
-if "Japan" in main:
-    arcgis("https://services6.arcgis.com/5jNaHNYe2AnnqRnS/arcgis/rest/services/COVID19_Japan/FeatureServer/0/query?where=ObjectID%3E0")
-    for place in attrs:
-        if place["Hospital_Pref"] != "Unknown":
-            main["Japan"][place["Hospital_Pref"]]["cases"] += 1
-
-# countries with reliable official data outside Arcgis
-if "Taiwan" in main:
-    with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
-        data = json.loads(response.read())
-        for row in data:
-            main["Taiwan"][row["縣市"]]["cases"] += int(row["確定病例數"])
+            with urllib.request.urlopen(url) as response:
+                for entry in json.loads(response.read())["features"]:
+                    if entry["attributes"][meta[query][1][0]] in main[country]:
+                        if country == "Japan" and entry["attributes"][meta[query][1][0]] != "Unknown":
+                            main[country][entry["attributes"][meta[query][1][0]]]["cases"] += 1
+                        else:
+                            main[country][entry["attributes"][meta[query][1][0]]]["cases"] = int(entry["attributes"][meta[query][1][1]])
+                            i += 1
+                            if country == "US" and i == 54:
+                                break
 
 colour = ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"]
 
