@@ -47,17 +47,17 @@ for country in countries:
                 meta[query][0][4]
             )
             url = url + "&outFields=*&returnGeometry=false&f=pjson"
-            i = 0
             with urllib.request.urlopen(url) as response:
-                for entry in json.loads(response.read())["features"]:
+                if country == "US":
+                    start = 236
+                else:
+                    start = 0
+                for entry in json.loads(response.read())["features"][start:]:
                     if entry["attributes"][meta[query][1][0]] in main:
                         if country == "Japan" and entry["attributes"][meta[query][1][0]] != "Unknown":
                             main[entry["attributes"][meta[query][1][0]]]["cases"] += 1
                         else:
                             main[entry["attributes"][meta[query][1][0]]]["cases"] = int(entry["attributes"][meta[query][1][1]])
-                            i += 1
-                            if country == "US" and i == 54:
-                                break
 
     if country == "Germany" or country == "Netherlands":
         unit = 10000
