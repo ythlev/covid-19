@@ -1070,6 +1070,24 @@
     "GM0532": 21706,
     "GM1711": 31638
   },
+    "Malaysia": {
+    "Perlis": 254800,
+    "Kedah": 2189500,
+    "Penang": 1780600,
+    "Perak": 2516500,
+    "Selangor": 6555600,
+    "Negeri Sembilan": 1134000,
+    "Melaka": 934800,
+    "Johor": 3772300,
+    "Pahang": 1679700,
+    "Terengganu": 1254600,
+    "Kelantan": 1898400,
+    "Sabah": 3906100,
+    "Sarawak": 2823400,
+    "Kuala Lumpur": 1776100,
+    "Putrajaya": 107100,
+    "Labuan": 99500
+  },
   "Taiwan": {
     "新北市": 3997189,
     "台北市": 2666908,
