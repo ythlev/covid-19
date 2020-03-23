@@ -36,16 +36,19 @@ for country in countries:
             queries = ["UK-1", "UK-2"]
         else:
             queries = [country]
+        date = 0
         for query in queries:
-            url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/query?where={}%3E0".format(
+            url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/".format(
                 meta[query][0][0],
                 meta[query][0][1],
                 meta[query][0][2],
                 meta[query][0][3],
-                meta[query][0][4]
             )
-            url = url + "&outFields=*&returnGeometry=false&f=pjson"
-            with urllib.request.urlopen(url) as response:
+            url1 = url + "?f=pjson"
+            with urllib.request.urlopen(url1) as response:
+                date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
+            url2 = url + "query?where={}%3E0&outFields=*&returnGeometry=false&f=pjson".format(meta[query][0][4])
+            with urllib.request.urlopen(url2) as response:
                 if country == "US":
                     start = 236
                 else:
@@ -96,7 +99,7 @@ for country in countries:
 
                 if written == False:
                     if row.find('>Date<') > -1:
-                        file_out.write(row.replace('Date', datetime.date.today().isoformat()))
+                        file_out.write(row.replace('Date', str(datetime.date.fromtimestamp(date))))
                     elif row.find('>level') > -1:
                         for i in range(6):
                             if row.find('level{}'.format(i)) > -1:
