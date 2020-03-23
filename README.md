@@ -27,7 +27,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per mill
 Contains Ordnance Survey data © Crown copyright and database right 2020. Contains National Statistics data © Crown copyright and database right 2020
 
 ## Canada
-* [miho_covid19canada](https://www.arcgis.com/home/item.html?id=7480dead10ba4408a7f813d31ed27051&view=list#overview)
+* [cnorth_covid19canada](https://www.arcgis.com/home/item.html?id=e5403793c5654affac0942432783365a)
 * [Statistics Canada](https://www150.statcan.gc.ca/n1/pub/82-402-x/2018001/hrbf-flrs-eng.htm)
 Adapted from Statistics Canada, Health region boundary files, 21 March 2020. This does not constitute an endorsement by Statistics Canada of this product.
 

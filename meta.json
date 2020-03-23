@@ -3,6 +3,10 @@
     ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0", "ObjectID"],
     ["ISO_SUB", "Cases"]
   ],
+  "Canada": [
+    ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0", "ObjectID"],
+    ["HR_UID", "CaseCount"]
+  ],
   "France": [
     ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "0", "ObjectID"],
     ["code_insee", "nb_cas"]

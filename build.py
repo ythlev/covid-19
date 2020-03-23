@@ -5,12 +5,10 @@ parser = argparse.ArgumentParser(description = "This script generates an svg map
 parser.add_argument("-c", "--country", help = "Name of country to generate; by default, a map for each country is generated")
 args = vars(parser.parse_args())
 
-countries = ["Australia", "France", "Germany", "Italy", "Japan", "Netherlands", "UK", "US", "Taiwan"]
-
 if args["country"] != None:
     countries = [args["country"]]
 else:
-    countries = ["Australia", "France", "Germany", "Italy", "Japan", "Netherlands", "UK", "US", "Taiwan"]
+    countries = ["Australia", "Canada", "France", "Germany", "Italy", "Japan", "Netherlands", "UK", "US", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
