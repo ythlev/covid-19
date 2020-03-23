@@ -35,7 +35,7 @@ with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", en
 with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
     meta = json.loads(file.read())
 
-for country in countries:
+for country in main:
     if country == "Taiwan":
         with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
             data = json.loads(response.read())
@@ -47,11 +47,12 @@ for country in countries:
         else:
             queries = [country]
         for query in queries:
-            url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/0/query?where={}%3E0".format(
+            url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/query?where={}%3E0".format(
                 meta[query][0][0],
                 meta[query][0][1],
                 meta[query][0][2],
                 meta[query][0][3],
+                meta[query][0][4]
             )
             url = url + "&outFields=*&returnGeometry=false&f=pjson"
             i = 0
@@ -64,8 +65,9 @@ for country in countries:
                             main[country][entry["attributes"][meta[query][1][0]]]["cases"] = int(entry["attributes"][meta[query][1][1]])
                             i += 1
                             if country == "US" and i == 54:
+                                print("foo")
                                 break
-
+                                
 colour = ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"]
 
 for country in main:

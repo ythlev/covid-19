@@ -1,38 +1,38 @@
 {
   "Australia": [
-    ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "ObjectID"],
+    ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0", "ObjectID"],
     ["ISO_SUB", "Cases"]
   ],
   "France": [
-    ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "ObjectID"],
+    ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "0", "ObjectID"],
     ["code_insee", "nb_cas"]
   ],
   "Germany": [
-      ["7", "mOBPykOjAyBO2ZKk", "Kreisgrenzen_2018_mit_Einwohnerzahl", "ObjectID"],
+      ["7", "mOBPykOjAyBO2ZKk", "Kreisgrenzen_2018_mit_Einwohnerzahl", "0", "ObjectID"],
       ["RS", "Fallzahlen"]
   ],
   "Italy": [
-    ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "ObjectID"],
+    ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "0", "ObjectID"],
     ["sigla_provincia", "totale_casi"]
   ],
   "Japan": [
-    ["6", "5jNaHNYe2AnnqRnS", "COVID19_Japan", "ObjectID"],
+    ["6", "5jNaHNYe2AnnqRnS", "COVID19_Japan", "0", "ObjectID"],
     ["Hospital_Pref"]
   ],
   "Netherlands": [
-    ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "ObjectID"],
+    ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "0", "ObjectID"],
     ["Gemeentecode", "Aantal_Besmettingen"]
   ],
   "UK-1": [
-    ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "FID"],
+    ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "0", "FID"],
     ["GSS_CD", "TotalCases"]
   ],
   "UK-2": [
-    ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "FID"],
+    ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "0", "FID"],
     ["GSS_CD", "TotalCases"]
   ],
   "US": [
-    ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "ObjectID"],
+    ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "ObjectID"],
     ["Province_State", "Confirmed"]
   ]
 }
