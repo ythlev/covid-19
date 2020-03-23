@@ -25,18 +25,22 @@ for country in countries:
             "population": population[country][place],
             "cases": 0
         }
-
+    date = datetime.datetime.timestamp(datetime.datetime.now())
     if country == "Taiwan":
         with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
-            data = json.loads(response.read())
-            for row in data:
-                main[row["縣市"]]["cases"] += int(row["確定病例數"])
+            cases = json.loads(response.read())
+        for row in cases:
+            main[row["縣市"]]["cases"] += int(row["確定病例數"])
+    elif country == "Malaysia":
+        with open((pathlib.Path() / "cases").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
+            cases = json.loads(file.read())
+        for place in cases[country]:
+            main[place]["cases"] = cases[country][place]
     else:
         if country == "UK":
             queries = ["UK-1", "UK-2"]
         else:
             queries = [country]
-        date = 0
         for query in queries:
             url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/".format(
                 meta[query][0][0],
