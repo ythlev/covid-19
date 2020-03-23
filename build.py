@@ -16,7 +16,7 @@ with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", en
 with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
     meta = json.loads(file.read())
 
-colour = ['#fee5d9','#fcae91','#fb6a4a','#de2d26','#a50f15']
+colour = ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"]
 
 for country in countries:
     main = {}
@@ -67,13 +67,13 @@ for country in countries:
         main[place]["pcapita"] = main[place]["cases"] / main[place]["population"] * unit
         values.append(main[place]["pcapita"])
 
-    step = math.sqrt(statistics.mean(values)) / 2
+    step = math.sqrt(statistics.mean(values)) / 2.5
 
-    threshold = [0, 0, 0, 0, 0]
-    for i in range(5):
+    threshold = [0, 0, 0, 0, 0, 0]
+    for i in range(6):
         threshold[i] = math.pow(i * step, 2)
 
-    with open((pathlib.Path() / "template" / country).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
+    with open((pathlib.Path() / "data" / "template" / country).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / country).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
             if threshold[1] > 10:
                 num = "{:.0f}"
@@ -85,7 +85,7 @@ for country in countries:
                 for place in main:
                     if row.find('id="{}"'.format(place)) > -1:
                         i = 0
-                        while i < 4:
+                        while i < 5:
                             if main[place]["pcapita"] >= threshold[i + 1]:
                                 i += 1
                             else:
@@ -98,7 +98,7 @@ for country in countries:
                     if row.find('>Date<') > -1:
                         file_out.write(row.replace('Date', datetime.date.today().isoformat()))
                     elif row.find('>level') > -1:
-                        for i in range(5):
+                        for i in range(6):
                             if row.find('level{}'.format(i)) > -1:
                                 if i == 0:
                                     file_out.write(row.replace('level{}'.format(i), "&lt; " + num.format(threshold[1])))

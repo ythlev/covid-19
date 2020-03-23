@@ -2,30 +2,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="1440" height="1457" stroke-linecap="round" stroke-linejoin="round">
   <g id="g1003" transform="matrix(0.76916242,0,0,0.76916242,4.6167515,621.68783)">
     <g id="g979">
+      <path fill="#fcbba1" d="M20 820H60V860H20z"/>
+      <path fill="#fc9272" d="M20 870H60V910H20z"/>
+      <path fill="#fb6a4a" d="M20 920H60V960H20z"/>
+      <path fill="#de2d26" d="M20 970H60V1010H20z"/>
       <path fill="#fee5d9" d="M20 770H60V810H20z"/>
-      <path fill="#fcae91" d="M20 820H60V860H20z"/>
-      <path fill="#fb6a4a" d="M20 870H60V910H20z"/>
-      <path fill="#de2d26" d="M20 920H60V960H20z"/>
-      <path fill="#a50f15" d="M20 970H60V1010H20z"/>
+      <path fill="#a50f15" d="M20 1020H60V1060H20z"/>
     </g>
     <g id="g971" font-size="30px" font-family="Verdana" fill="#000">
-      <text id="text941" y="750" x="20" xml:space="preserve">
-        <tspan y="750" x="20" id="tspan939">Date</tspan>
+      <text id="text907" y="1050" x="70" xml:space="preserve">
+        <tspan y="1050" x="70" id="tspan905">level5</tspan>
       </text>
-      <text xml:space="preserve" x="70" y="800" id="text937">
-        <tspan id="tspan935" x="70" y="800">level0</tspan>
-      </text>
-      <text id="text933" y="850" x="70" xml:space="preserve">
-        <tspan y="850" x="70" id="tspan931">level1</tspan>
-      </text>
-      <text xml:space="preserve" x="70" y="900" id="text929">
-        <tspan id="tspan927" x="70" y="900">level2</tspan>
+      <text xml:space="preserve" x="70" y="1000" id="text921">
+        <tspan id="tspan919" x="70" y="1000">level4</tspan>
       </text>
       <text id="text925" y="950" x="70" xml:space="preserve">
         <tspan y="950" x="70" id="tspan923">level3</tspan>
       </text>
-      <text xml:space="preserve" x="70" y="1000" id="text921">
-        <tspan id="tspan919" x="70" y="1000">level4</tspan>
+      <text xml:space="preserve" x="70" y="900" id="text929">
+        <tspan id="tspan927" x="70" y="900">level2</tspan>
+      </text>
+      <text id="text933" y="850" x="70" xml:space="preserve">
+        <tspan y="850" x="70" id="tspan931">level1</tspan>
+      </text>
+      <text xml:space="preserve" x="70" y="800" id="text937">
+        <tspan id="tspan935" x="70" y="800">level0</tspan>
+      </text>
+      <text id="text941" y="750" x="20" xml:space="preserve">
+        <tspan y="750" x="20" id="tspan939">Date</tspan>
       </text>
     </g>
   </g>
