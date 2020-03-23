@@ -80,7 +80,7 @@ for country in countries:
     for i in range(6):
         threshold[i] = math.pow(i * step, 2)
 
-    with open((pathlib.Path() / "data" / "template" / country).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
+    with open((pathlib.Path() / "template" / country).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / country).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
             if threshold[1] > 10:
                 num = "{:.0f}"
