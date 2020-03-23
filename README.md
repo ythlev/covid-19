@@ -7,7 +7,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 * [內政部戶政司](https://gis.ris.gov.tw/dashboard.html?key=B01)
 
 ## Japan
-* [ジャッグジャパン株式会社](https://gis.jag-japan.com/covid19jp/)
+* [ジャッグジャパン株式会社](https://www.arcgis.com/home/item.html?id=a8d15e435dc746afa2347c6826ad5a95)
 * [Geospatial Information Authority of Japan](https://www.gsi.go.jp/kankyochiri/gm_japan_e.html)
 * [Statistics Bureau, Ministry of Internal Affairs and Communications](https://www.stat.go.jp/english/data/nenkan/66nenkan/1431-02.html)
 
@@ -19,7 +19,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 * [leandrodesanjuan_mapthenews](https://www.arcgis.com/home/item.html?id=e34701f45bf6484ca14e0ba2d9e4939f)
 
 ## Germany
-* [Bundesamtes für Kartographie und Geodäsie](https://www.arcgis.com/home/item.html?id=917fc37a709542548cc3be077a786c17)
+* [Bundesamt für Kartographie und Geodäsie Robert Koch-Institut](https://www.arcgis.com/home/item.html?id=917fc37a709542548cc3be077a786c17)
 
 ## UK
 * [Public Health England](https://www.arcgis.com/home/item.html?id=a51606bdfb824d65a63ef0ca65aac90f)
@@ -34,10 +34,13 @@ Contains Ordnance Survey data © Crown copyright and database right 2020. Contai
 Adapted from Statistics Canada, Health region boundary files, 21 March 2020. This does not constitute an endorsement by Statistics Canada of this product.
 
 ## Australia
-* [Simon Jackson, Guardian Australia](https://www.arcgis.com/home/item.html?id=35b077523be94f7288b21db815e6e6e6#overview)
+* [Guardian Australia](https://www.arcgis.com/home/item.html?id=35b077523be94f7288b21db815e6e6e6#overview)
 
 ## Italy
 * [Umberto Rosini](https://www.arcgis.com/home/item.html?id=b0c68bce2cce478eaac82fe38d4138b1)
 
 ## Netherlands
 * [Esri Nederland](https://www.arcgis.com/home/item.html?id=20d392a8a3b84506b7f9c2bb0f20ae8c)
+
+## Spain
+* [Esri España](https://www.arcgis.com/home/item.html?id=eb502ad861b7432a82cadad12c77851c)

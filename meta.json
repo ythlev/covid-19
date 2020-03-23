@@ -27,6 +27,10 @@
     ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "0", "ObjectID"],
     ["Gemeentecode", "Aantal_Besmettingen"]
   ],
+  "Spain":[
+    ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "ObjectID_12"],
+    ["Codigo", "TotalConfirmados"]
+  ],
   "UK-1": [
     ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "0", "FID"],
     ["GSS_CD", "TotalCases"]
