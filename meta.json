@@ -1,0 +1,38 @@
+{
+  "Australia": [
+    ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "ObjectID"],
+    ["ISO_SUB", "Cases"]
+  ],
+  "France": [
+    ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "ObjectID"],
+    ["code_insee", "nb_cas"]
+  ],
+  "Germany": [
+      ["7", "mOBPykOjAyBO2ZKk", "Kreisgrenzen_2018_mit_Einwohnerzahl", "ObjectID"],
+      ["RS", "Fallzahlen"]
+  ],
+  "Italy": [
+    ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "ObjectID"],
+    ["sigla_provincia", "totale_casi"]
+  ],
+  "Japan": [
+    ["6", "5jNaHNYe2AnnqRnS", "COVID19_Japan", "ObjectID"],
+    ["Hospital_Pref"]
+  ],
+  "Netherlands": [
+    ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "ObjectID"],
+    ["Gemeentecode", "Aantal_Besmettingen"]
+  ],
+  "UK": [
+    ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "FID"],
+    ["GSS_CD", "TotalCases"]
+  ],
+  "UK-2": [
+    ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "FID"],
+    ["GSS_CD", "TotalCases"]
+  ],
+  "US": [
+    ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "ObjectID"],
+    ["Province_State", "Confirmed"]
+  ]
+}

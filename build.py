@@ -5,8 +5,7 @@ parser = argparse.ArgumentParser(description = "This script generates an svg map
 parser.add_argument("-c", "--country", help = "Name of country to generate; by default, a map for each country is generated")
 args = vars(parser.parse_args())
 
-countries = ["Australia", "Canada", "France", "Germany", "Italy", "Japan", "Netherlands", "Taiwan", "UK", "US"]
-am = ["France", "Italy", "UK", "US", "Taiwan"]
+countries = ["Australia", "France", "Germany", "Italy", "Japan", "Netherlands", "UK", "US", "Taiwan"]
 
 if args["country"] != None:
     main = {args["country"]:{}}
@@ -25,13 +24,16 @@ else:
     }
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
-    data = json.loads(file.read())
+    population = json.loads(file.read())
     for country in main:
-        for place in data[country]:
+        for place in population[country]:
             main[country][place] = {
-                "population": data[country][place],
+                "population": population[country][place],
                 "cases": 0
             }
+
+#with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
+    #meta = json.loads(file.read())
 
 def arcgis(query):
     global attrs
@@ -39,6 +41,26 @@ def arcgis(query):
     with urllib.request.urlopen(query + "&outFields=*&returnGeometry=false&f=pjson") as response:
         for entry in json.loads(response.read())["features"]:
             attrs.append(entry["attributes"])
+
+for country in countries:
+    if country == "Taiwan":
+        with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
+            data = json.loads(response.read())
+            for row in data:
+                main["Taiwan"][row["縣市"]]["cases"] += int(row["確定病例數"])
+    else:
+        url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/0/query?where={}%3E0".format(meta[country][0])
+        with urllib.request.urlopen(url) as response:
+            i = 0
+            for entry in json.loads(response.read())["features"]:
+                if meta[country][1][0] in main[country]:
+                    if country == "Japan":
+                        main[country][entry["attributes"][meta[country][1][0]]]["cases"] += 1
+                    else:
+                        main[country][entry["attributes"][meta[country][1][0]]]["cases"] = int(ntry["attributes"][meta[country][1][1]])
+                        i += 1
+                        if country == "US" and i == 54:
+                            break
 
 # countries using worldwide data
 if "US" in main:
@@ -131,7 +153,7 @@ for country in main:
 
     with open((pathlib.Path() / "data" / "template" / country).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / country).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
-            if country == "UK" or threshold[1] > 2:
+            if threshold[1] > 10:
                 num = "{:.0f}"
             else:
                 num = "{:.2f}"
