@@ -57,7 +57,7 @@ for country in countries:
                         else:
                             main[entry["attributes"][meta[query][1][0]]]["cases"] = int(entry["attributes"][meta[query][1][1]])
 
-    if country == "Germany" or country == "Netherlands":
+    if country in ["Germany", "Netherlands"]:
         unit = 10000
     else:
         unit = 1000000
@@ -67,7 +67,7 @@ for country in countries:
         main[place]["pcapita"] = main[place]["cases"] / main[place]["population"] * unit
         values.append(main[place]["pcapita"])
 
-    step = math.sqrt(statistics.mean(values)) / 2.5
+    step = math.sqrt(statistics.mean(values)) / 3
 
     threshold = [0, 0, 0, 0, 0, 0]
     for i in range(6):
