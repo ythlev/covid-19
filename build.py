@@ -8,39 +8,31 @@ args = vars(parser.parse_args())
 countries = ["Australia", "France", "Germany", "Italy", "Japan", "Netherlands", "UK", "US", "Taiwan"]
 
 if args["country"] != None:
-    main = {args["country"]:{}}
+    countries = [args["country"]]
 else:
-    main = {
-        "US": {},
-        "Australia": {},
-        "France": {},
-        "Italy": {},
-        #"Canada": {},
-        "Germany": {},
-        "Netherlands": {},
-        "UK": {},
-        "Japan": {},
-        "Taiwan": {}
-    }
+    countries = ["Australia", "France", "Germany", "Italy", "Japan", "Netherlands", "UK", "US", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
-    for country in main:
-        for place in population[country]:
-            main[country][place] = {
-                "population": population[country][place],
-                "cases": 0
-            }
 
 with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
     meta = json.loads(file.read())
 
-for country in main:
+colour = ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"]
+
+for country in countries:
+    main = {}
+    for place in population[country]:
+        main[place] = {
+            "population": population[country][place],
+            "cases": 0
+        }
+
     if country == "Taiwan":
         with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
             data = json.loads(response.read())
             for row in data:
-                main["Taiwan"][row["縣市"]]["cases"] += int(row["確定病例數"])
+                main[row["縣市"]]["cases"] += int(row["確定病例數"])
     else:
         if country == "UK":
             queries = ["UK-1", "UK-2"]
@@ -58,28 +50,24 @@ for country in main:
             i = 0
             with urllib.request.urlopen(url) as response:
                 for entry in json.loads(response.read())["features"]:
-                    if entry["attributes"][meta[query][1][0]] in main[country]:
+                    if entry["attributes"][meta[query][1][0]] in main:
                         if country == "Japan" and entry["attributes"][meta[query][1][0]] != "Unknown":
-                            main[country][entry["attributes"][meta[query][1][0]]]["cases"] += 1
+                            main[entry["attributes"][meta[query][1][0]]]["cases"] += 1
                         else:
-                            main[country][entry["attributes"][meta[query][1][0]]]["cases"] = int(entry["attributes"][meta[query][1][1]])
+                            main[entry["attributes"][meta[query][1][0]]]["cases"] = int(entry["attributes"][meta[query][1][1]])
                             i += 1
                             if country == "US" and i == 54:
-                                print("foo")
                                 break
-                                
-colour = ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"]
 
-for country in main:
     if country == "Germany" or country == "Netherlands":
         unit = 10000
     else:
         unit = 1000000
 
     values = []
-    for place in main[country]:
-        main[country][place]["pcapita"] = main[country][place]["cases"] / main[country][place]["population"] * unit
-        values.append(main[country][place]["pcapita"])
+    for place in main:
+        main[place]["pcapita"] = main[place]["cases"] / main[place]["population"] * unit
+        values.append(main[place]["pcapita"])
 
     step = math.sqrt(statistics.mean(values)) / 2.5
 
@@ -96,11 +84,11 @@ for country in main:
 
             for row in file_in:
                 written = False
-                for place in main[country]:
+                for place in main:
                     if row.find('id="{}"'.format(place)) > -1:
                         i = 0
                         while i < 5:
-                            if main[country][place]["pcapita"] >= threshold[i + 1]:
+                            if main[place]["pcapita"] >= threshold[i + 1]:
                                 i += 1
                             else:
                                 break
@@ -122,6 +110,6 @@ for country in main:
                         file_out.write(row)
 
     cases = []
-    for place in main[country]:
-        cases.append(main[country][place]["cases"])
+    for place in main:
+        cases.append(main[place]["cases"])
     print("{}: {} cases total in {} areas".format(country, sum(cases), len(cases)))
