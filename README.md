@@ -19,7 +19,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 * [leandrodesanjuan_mapthenews](https://www.arcgis.com/home/item.html?id=e34701f45bf6484ca14e0ba2d9e4939f)
 
 ## Germany
-* [Bundesamtes für Kartographie und Geodäsie](https://www.arcgis.com/home/item.html?id=1059bef1daf2440b87880c50b99167a5#overview)
+* [Bundesamtes für Kartographie und Geodäsie](https://www.arcgis.com/home/item.html?id=917fc37a709542548cc3be077a786c17)
 
 ## UK
 * [Public Health England](https://www.arcgis.com/home/item.html?id=a51606bdfb824d65a63ef0ca65aac90f)
