@@ -25,7 +25,7 @@ for country in countries:
             "population": population[country][place],
             "cases": 0
         }
-    date = datetime.datetime.timestamp(datetime.datetime.now())
+    date = datetime.date.today()
     if country == "Taiwan":
         with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
             cases = json.loads(response.read())
@@ -51,6 +51,7 @@ for country in countries:
             url1 = url + "?f=pjson"
             with urllib.request.urlopen(url1) as response:
                 date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
+                date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
             url2 = url + "query?where={}%3E0&outFields=*&returnGeometry=false&f=pjson".format(meta[query][0][4])
             with urllib.request.urlopen(url2) as response:
                 if country == "US":
@@ -103,7 +104,7 @@ for country in countries:
 
                 if written == False:
                     if row.find('>Date<') > -1:
-                        file_out.write(row.replace('Date', str(datetime.date.fromtimestamp(date))))
+                        file_out.write(row.replace('Date', date.strftime("%F")))
                     elif row.find('>level') > -1:
                         for i in range(6):
                             if row.find('level{}'.format(i)) > -1:
