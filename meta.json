@@ -46,5 +46,9 @@
   "US": [
     ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "ObjectID"],
     ["Province_State", "Confirmed"]
+  ],
+  "New York": [
+    ["1", "LUqvaC60LFeidJsA", "Cases_current", "0", "ObjectID"],
+    ["name", "confirmed"]
   ]
 }
