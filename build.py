@@ -75,11 +75,12 @@ for country in countries:
         main[place]["pcapita"] = main[place]["cases"] / main[place]["population"] * unit
         values.append(main[place]["pcapita"])
 
-    step = math.sqrt(statistics.mean(values) - min(values)) / 3
+    q = statistics.quantiles(values, n = 100)
+    step = math.sqrt(statistics.mean(values) - q[0]) / 3
 
     threshold = [0, 0, 0, 0, 0, 0]
-    for i in range(6):
-        threshold[i] = math.pow(i * step, 2) + min(values)
+    for i in range(1, 6):
+        threshold[i] = math.pow(i * step, 2) + q[0]
 
     with open((pathlib.Path() / "template" / country).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / country).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
