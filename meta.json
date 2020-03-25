@@ -25,7 +25,7 @@
   ],
   "Japan": [
     ["6", "5jNaHNYe2AnnqRnS", "COVID19_Japan", "0", "ObjectID"],
-    ["Hospital_Pref"]
+    ["Hospital_Pref", ""]
   ],
   "Netherlands": [
     ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "0", "ObjectID"],

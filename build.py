@@ -8,7 +8,7 @@ args = vars(parser.parse_args())
 if args["place"] != None:
     places = [args["place"]]
 else:
-    places = ["Australia", "Canada", "France", "Germany", "Berlin", "Italy", "Japan", "Netherlands", "UK", "US", "Spain", "Taiwan"]
+    places = ["Australia", "Canada", "France", "Germany", "Berlin", "Italy", "Japan", "Netherlands", "UK", "US", "New York", "Spain", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
@@ -52,7 +52,11 @@ for place in places:
             with urllib.request.urlopen(url1) as response:
                 date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
                 date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
-            url2 = url + "query?where={}%3E0&outFields=*&returnGeometry=false&f=pjson".format(meta[query][0][4])
+            url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&f=pjson".format(
+                meta[query][0][4],
+                meta[query][1][0],
+                meta[query][1][1],
+            )
             with urllib.request.urlopen(url2) as response:
                 if place == "US":
                     start = 236
