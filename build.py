@@ -8,7 +8,7 @@ args = vars(parser.parse_args())
 if args["country"] != None:
     countries = [args["country"]]
 else:
-    countries = ["Australia", "Canada", "France", "Germany", "Italy", "Japan", "Netherlands", "UK", "US", "Spain", "Taiwan"]
+    countries = ["Australia", "Canada", "France", "Germany", "Berlin", "Italy", "Japan", "Netherlands", "UK", "US", "Spain", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
@@ -75,12 +75,12 @@ for country in countries:
         main[place]["pcapita"] = main[place]["cases"] / main[place]["population"] * unit
         values.append(main[place]["pcapita"])
 
-    q = statistics.quantiles(values, n = 100)
-    step = math.sqrt(statistics.mean(values) - q[0]) / 3
+    q = statistics.quantiles(values, n = 100, method = "inclusive")
+    step = math.sqrt(statistics.mean(values) - q[1]) / 3
 
     threshold = [0, 0, 0, 0, 0, 0]
     for i in range(1, 6):
-        threshold[i] = math.pow(i * step, 2) + q[0]
+        threshold[i] = math.pow(i * step, 2) + q[1]
 
     with open((pathlib.Path() / "template" / country).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / country).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
