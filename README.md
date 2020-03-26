@@ -13,6 +13,9 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 
 ## USA
 * [Johns Hopkins CSSE](https://www.arcgis.com/home/item.html?id=c0b356e20b30490c8b8b4c7bb9554e7c#overview)
+* [Johns Hopkins CSSE](https://www.arcgis.com/home/item.html?id=628578697fb24d8ea4c32fa0c5ae1843)
+* [cliu_geocove](https://www.arcgis.com/home/item.html?id=337b7643bee445dca9fca4450bc8f6f6)
+* [United States Census Bureau](https://www.census.gov/data/tables/time-series/demo/popest/2010s-total-cities-and-towns.html)
 * [United States Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html#par_textimage_1873399417)
 
 ## France
