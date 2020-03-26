@@ -70,7 +70,7 @@ for place in places:
                         else:
                             main[key]["cases"] = int(entry["attributes"][meta[query][1][1]])
 
-    if place in ["Germany", "Berlin", "Netherlands", "New York"]:
+    if place in ["Germany", "Berlin", "Netherlands", "London", "New York"]:
         unit = 10000
     else:
         unit = 1000000

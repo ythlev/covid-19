@@ -43,6 +43,10 @@
     ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "0", "FID"],
     ["GSS_CD", "TotalCases"]
   ],
+  "London": [
+    ["1", "0IrmI40n5ZYxTUrV", "CountyUAs_cases", "0", "FID"],
+    ["GSS_CD", "TotalCases"]
+  ],
   "US": [
     ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "ObjectID"],
     ["Province_State", "Confirmed"]
