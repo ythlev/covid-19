@@ -63,11 +63,12 @@ for place in places:
                 else:
                     start = 0
                 for entry in json.loads(response.read())["features"][start:]:
-                    if entry["attributes"][meta[query][1][0]] in main:
-                        if place == "Japan" and entry["attributes"][meta[query][1][0]] != "Unknown":
-                            main[entry["attributes"][meta[query][1][0]]]["cases"] += 1
+                    key = (entry["attributes"][meta[query][1][0]]).lstrip("0")
+                    if key in main:
+                        if place == "Japan" and key != "Unknown":
+                            main[key]["cases"] += 1
                         else:
-                            main[entry["attributes"][meta[query][1][0]]]["cases"] = int(entry["attributes"][meta[query][1][1]])
+                            main[key]["cases"] = int(entry["attributes"][meta[query][1][1]])
 
     if place in ["Germany", "Berlin", "Netherlands", "New York"]:
         unit = 10000
@@ -80,11 +81,11 @@ for place in places:
         values.append(main[area]["pcapita"])
 
     q = statistics.quantiles(values, n = 100, method = "inclusive")
-    step = math.sqrt(statistics.mean(values) - q[1]) / 3
+    step = math.sqrt(statistics.mean(values) - q[0]) / 3
 
     threshold = [0, 0, 0, 0, 0, 0]
     for i in range(1, 6):
-        threshold[i] = math.pow(i * step, 2) + q[1]
+        threshold[i] = math.pow(i * step, 2) + q[0]
 
     with open((pathlib.Path() / "template" / place).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / place).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
