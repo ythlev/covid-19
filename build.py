@@ -8,7 +8,7 @@ args = vars(parser.parse_args())
 if args["place"] != None:
     places = [args["place"]]
 else:
-    places = ["Australia", "Canada", "France", "Berlin", "Italy", "Japan", "Netherlands", "UK", "London", "US", "Spain", "Taiwan"]
+    places = ["Australia", "Canada", "France", "Berlin", "Italy", "Japan", "Netherlands", "UK", "London", "US", "New York CSA", "Spain", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
@@ -39,6 +39,8 @@ for place in places:
     else:
         if place == "UK":
             queries = ["UK-1", "UK-2"]
+        elif place == "New York CSA":
+            queries = ["New York CSA-1", "New York"]
         else:
             queries = [place]
         for query in queries:
@@ -63,14 +65,14 @@ for place in places:
                 else:
                     start = 0
                 for entry in json.loads(response.read())["features"][start:]:
-                    key = (entry["attributes"][meta[query][1][0]]).lstrip("0")
+                    key = str(entry["attributes"][meta[query][1][0]]).lstrip("0")
                     if key in main:
                         if place == "Japan" and key != "Unknown":
                             main[key]["cases"] += 1
                         else:
                             main[key]["cases"] = int(entry["attributes"][meta[query][1][1]])
 
-    if place in ["Germany", "Berlin", "Netherlands", "London", "New York"]:
+    if place in ["Germany", "Berlin", "Netherlands", "London", "New York CSA", "New York"]:
         unit = 10000
     else:
         unit = 1000000
