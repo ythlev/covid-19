@@ -20,7 +20,7 @@
       ["RS", "cases"]
   ],
   "Italy": [
-    ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "0", "ObjectID"],
+    ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "0", "ObjectId"],
     ["sigla_provincia", "totale_casi"]
   ],
   "Japan": [

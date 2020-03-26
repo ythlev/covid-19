@@ -47,10 +47,10 @@
       <path d="m 20,1020 h 40 v 40 H 20 Z" fill="#a50f15"/>
       <g font-size="30" font-family="Verdana">
         <text x="70" y="1050">
-          <tspan id="tspan905" x="70" y="1050">≥ 24.81</tspan>
+          <tspan id="tspan905" x="70" y="1050">≥ 24.82</tspan>
         </text>
         <text y="1000" x="70">
-          <tspan y="1000" x="70" id="tspan919">≥ 15.97</tspan>
+          <tspan y="1000" x="70" id="tspan919">≥ 15.98</tspan>
         </text>
         <text x="70" y="950">
           <tspan id="tspan923" x="70" y="950">≥ 9.10</tspan>
