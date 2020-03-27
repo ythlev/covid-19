@@ -47,25 +47,25 @@
       <path d="m 20,1020 h 40 v 40 H 20 Z" fill="#a50f15"/>
       <g font-size="30" font-family="Verdana">
         <text x="70" y="1050">
-          <tspan id="tspan905" x="70" y="1050">≥ 30.09</tspan>
+          <tspan id="tspan905" x="70" y="1050">≥ 30.36</tspan>
         </text>
         <text y="1000" x="70">
-          <tspan y="1000" x="70" id="tspan919">≥ 19.40</tspan>
+          <tspan y="1000" x="70" id="tspan919">≥ 19.58</tspan>
         </text>
         <text x="70" y="950">
-          <tspan id="tspan923" x="70" y="950">≥ 11.09</tspan>
+          <tspan id="tspan923" x="70" y="950">≥ 11.19</tspan>
         </text>
         <text y="900" x="70">
-          <tspan y="900" x="70" id="tspan927">≥ 5.15</tspan>
+          <tspan y="900" x="70" id="tspan927">≥ 5.20</tspan>
         </text>
         <text x="70" y="850">
-          <tspan id="tspan931" x="70" y="850">≥ 1.59</tspan>
+          <tspan id="tspan931" x="70" y="850">≥ 1.60</tspan>
         </text>
         <text y="800" x="70">
-          <tspan y="800" x="70" id="tspan935">&lt; 1.59</tspan>
+          <tspan y="800" x="70" id="tspan935">&lt; 1.60</tspan>
         </text>
         <text x="20" y="750">
-          <tspan id="tspan939" x="20" y="750">2020-03-26</tspan>
+          <tspan id="tspan939" x="20" y="750">2020-03-27</tspan>
         </text>
       </g>
     </g>
