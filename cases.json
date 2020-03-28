@@ -1,20 +1,20 @@
 {
   "Malaysia": {
     "Perlis": 10,
-    "Kedah": 73,
-    "Penang": 80,
-    "Perak": 159,
-    "Selangor": 546,
-    "Negeri Sembilan": 138,
-    "Melaka": 33,
-    "Johor": 259,
-    "Pahang": 70,
-    "Terengganu": 41,
-    "Kelantan": 98,
-    "Sabah": 182,
-    "Sarawak": 110,
-    "Kuala Lumpur": 323,
+    "Kedah": 74,
+    "Penang": 86,
+    "Perak": 165,
+    "Selangor": 579,
+    "Negeri Sembilan": 153,
+    "Melaka": 42,
+    "Johor": 285,
+    "Pahang": 84,
+    "Terengganu": 45,
+    "Kelantan": 108,
+    "Sabah": 197,
+    "Sarawak": 118,
+    "Kuala Lumpur": 344,
     "Putrajaya": 34,
-    "Labuan": 5
+    "Labuan": 10
   }
 }
