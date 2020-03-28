@@ -43,34 +43,38 @@ for place in places:
             queries = ["New York CSA-1", "New York"]
         else:
             queries = [place]
-        for query in queries:
-            url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/".format(
-                meta[query][0][0],
-                meta[query][0][1],
-                meta[query][0][2],
-                meta[query][0][3],
-            )
-            url1 = url + "?f=pjson"
-            with urllib.request.urlopen(url1) as response:
-                date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
-                date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
-            url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&f=pjson".format(
-                meta[query][0][4],
-                meta[query][1][0],
-                meta[query][1][1],
-            )
-            with urllib.request.urlopen(url2) as response:
-                if place == "US":
-                    start = 236
-                else:
-                    start = 0
-                for entry in json.loads(response.read())["features"][start:]:
-                    key = str(entry["attributes"][meta[query][1][0]]).lstrip("0")
-                    if key in main:
-                        if place == "Japan" and key != "Unknown":
-                            main[key]["cases"] += 1
-                        else:
-                            main[key]["cases"] = int(entry["attributes"][meta[query][1][1]])
+        try:
+            for query in queries:
+                url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/".format(
+                    meta[query][0][0],
+                    meta[query][0][1],
+                    meta[query][0][2],
+                    meta[query][0][3],
+                )
+                url1 = url + "?f=pjson"
+                with urllib.request.urlopen(url1) as response:
+                    date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
+                    date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
+                url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&f=pjson".format(
+                    meta[query][0][4],
+                    meta[query][1][0],
+                    meta[query][1][1],
+                )
+                with urllib.request.urlopen(url2) as response:
+                    if place == "US":
+                        start = 236
+                    else:
+                        start = 0
+                    for entry in json.loads(response.read())["features"][start:]:
+                        key = str(entry["attributes"][meta[query][1][0]]).lstrip("0")
+                        if key in main:
+                            if place == "Japan" and key != "Unknown":
+                                main[key]["cases"] += 1
+                            else:
+                                main[key]["cases"] = int(entry["attributes"][meta[query][1][1]])
+        except:
+            print("Error fetching data for", place)
+            continue
 
     if place in ["Germany", "Berlin", "Netherlands", "London", "New York CSA", "New York"]:
         unit = 10000

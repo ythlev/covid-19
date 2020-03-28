@@ -7,7 +7,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 * [內政部戶政司](https://gis.ris.gov.tw/dashboard.html?key=B01)
 
 ## Japan
-* [ジャッグジャパン株式会社](https://www.arcgis.com/home/item.html?id=a8d15e435dc746afa2347c6826ad5a95)
+* [ジャッグジャパン株式会社](https://www.arcgis.com/home/item.html?id=b02e4b08354a4b08a7ab869517a5fadc#overview)
 * [Geospatial Information Authority of Japan](https://www.gsi.go.jp/kankyochiri/gm_japan_e.html)
 * [Statistics Bureau, Ministry of Internal Affairs and Communications](https://www.stat.go.jp/english/data/nenkan/66nenkan/1431-02.html)
 
