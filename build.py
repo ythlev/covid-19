@@ -2,7 +2,7 @@
 import argparse, pathlib, json, csv, io, urllib.request, math, statistics, datetime
 
 parser = argparse.ArgumentParser(description = "This script generates svg maps for the COVID-19 outbreak for select places")
-parser.add_argument("-p", "--place", help = "Name of place to generate; by default, maps for select places is generated")
+parser.add_argument("-p", "--place", help = "Name of place to generate; by default, maps for select places are generated")
 args = vars(parser.parse_args())
 
 if args["place"] != None:
@@ -112,7 +112,7 @@ for place in places:
                         break
 
                 if written == False:
-                    if row.find('>Date<') > -1:
+                    if row.find('>Date') > -1:
                         file_out.write(row.replace('Date', date.strftime("%F")))
                     elif row.find('>level') > -1:
                         for i in range(6):
