@@ -12,7 +12,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 * [Statistics Bureau, Ministry of Internal Affairs and Communications](https://www.stat.go.jp/english/data/nenkan/66nenkan/1431-02.html)
 
 ## USA
-* [Johns Hopkins CSSE](https://www.arcgis.com/home/item.html?id=c0b356e20b30490c8b8b4c7bb9554e7c#overview)
+* [Johns Hopkins CSSE](https://www.arcgis.com/home/item.html?id=c0b356e20b30490c8b8b4c7bb9554e7c)
 * [Johns Hopkins CSSE](https://www.arcgis.com/home/item.html?id=628578697fb24d8ea4c32fa0c5ae1843)
 * [cliu_geocove](https://www.arcgis.com/home/item.html?id=337b7643bee445dca9fca4450bc8f6f6)
 * [United States Census Bureau](https://www.census.gov/data/tables/time-series/demo/popest/2010s-total-cities-and-towns.html)
@@ -40,7 +40,7 @@ Contains Ordnance Survey data © Crown copyright and database right 2020. Contai
 Adapted from Statistics Canada, Health region boundary files, 21 March 2020. This does not constitute an endorsement by Statistics Canada of this product.
 
 ## Australia
-* [Guardian Australia](https://www.arcgis.com/home/item.html?id=35b077523be94f7288b21db815e6e6e6#overview)
+* [Guardian Australia](https://www.arcgis.com/home/item.html?id=35b077523be94f7288b21db815e6e6e6)
 
 ## Italy
 * [Umberto Rosini](https://www.arcgis.com/home/item.html?id=b0c68bce2cce478eaac82fe38d4138b1)
@@ -50,3 +50,7 @@ Adapted from Statistics Canada, Health region boundary files, 21 March 2020. Thi
 
 ## Spain
 * [Esri España](https://www.arcgis.com/home/item.html?id=eb502ad861b7432a82cadad12c77851c)
+
+## Poland
+* [esritwsb](https://www.arcgis.com/home/item.html?id=eb9ebac30e0d496a8bac5aa468957dd2)
+* [igismap.com](https://www.igismap.com/poland-shapefile-download-country-boundary-administrative-polygon-provinces-sub-divsions/)

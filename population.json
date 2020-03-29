@@ -1102,6 +1102,24 @@
     "Putrajaya": 107100,
     "Labuan": 99500
   },
+  "Poland": {
+    "opolskie": 986506,
+    "świętokrzyskie": 1241546,
+    "kujawsko-pomorskie": 2077775,
+    "mazowieckie": 5403412,
+    "pomorskie": 2333523,
+    "śląskie": 4533565,
+    "warmińsko-mazurskie": 1428983,
+    "zachodniopomorskie": 1701030,
+    "dolnośląskie": 2901225,
+    "wielkopolskie": 3493969,
+    "łódzkie": 2466322,
+    "podlaskie": 1181533,
+    "małopolskie": 3400577,
+    "lubuskie": 1014548,
+    "podkarpackie": 2129015,
+    "lubelskie": 2117619
+  },
   "Spain": {
     "1": 8384408,
     "2": 1308728,
