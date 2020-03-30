@@ -8,7 +8,7 @@ args = vars(parser.parse_args())
 if args["place"] != None:
     places = [args["place"]]
 else:
-    places = ["Australia", "Canada", "Berlin", "Italy", "Japan", "Netherlands", "UK", "London", "US", "New York CSA", "Spain", "Taiwan"]
+    places = ["Australia", "Canada", "Berlin", "Italy", "Japan", "Netherlands", "UK", "London", "US", "New York CSA", "Poland", "Spain", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
