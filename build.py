@@ -1,5 +1,5 @@
 # Created by Chang Chia-huan
-import argparse, pathlib, json, csv, io, urllib.request, math, statistics, datetime
+import argparse, pathlib, json, csv, io, urllib.request, urllib.parse, math, statistics, datetime
 
 parser = argparse.ArgumentParser(description = "This script generates svg maps for the COVID-19 outbreak for select places")
 parser.add_argument("-p", "--place", help = "Name of place to generate; by default, maps for select places are generated")
@@ -8,7 +8,7 @@ args = vars(parser.parse_args())
 if args["place"] != None:
     places = [args["place"]]
 else:
-    places = ["Australia", "Canada", "Berlin", "Italy", "Japan", "Netherlands", "UK", "London", "US", "New York CSA", "Poland", "Spain", "Taiwan"]
+    places = ["Australia", "Canada", "Berlin", "Italy", "Japan", "Korea", "Netherlands", "UK", "London", "US", "New York CSA", "Poland", "Spain", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
@@ -48,7 +48,7 @@ for place in places:
                 url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/".format(
                     meta[query][0][0],
                     meta[query][0][1],
-                    meta[query][0][2],
+                    urllib.parse.quote(meta[query][0][2]),
                     meta[query][0][3],
                 )
                 url1 = url + "?f=pjson"
@@ -96,7 +96,6 @@ for place in places:
                 num = "{:.0f}"
             else:
                 num = "{:.2f}"
-
             for row in file_in:
                 written = False
                 for area in main:
@@ -110,7 +109,6 @@ for place in places:
                         file_out.write(row.replace('id="{}"'.format(area), 'style="fill:{}"'.format(colour[i])))
                         written = True
                         break
-
                 if written == False:
                     if row.find('>Date') > -1:
                         file_out.write(row.replace('Date', date.strftime("%F")))

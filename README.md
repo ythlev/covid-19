@@ -54,3 +54,6 @@ Adapted from Statistics Canada, Health region boundary files, 21 March 2020. Thi
 ## Poland
 * [esritwsb](https://www.arcgis.com/home/item.html?id=eb9ebac30e0d496a8bac5aa468957dd2)
 * [igismap.com](https://www.igismap.com/poland-shapefile-download-country-boundary-administrative-polygon-provinces-sub-divsions/)
+
+## Korea
+* [igismap.com](https://www.igismap.com/download-south-korea-shapefile/)
