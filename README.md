@@ -62,3 +62,6 @@ Adapted from Statistics Canada, Health region boundary files, 21 March 2020. Thi
 ## Czechia
 * [Ministerstvo zdravotnictví ČR](https://onemocneni-aktualne.mzcr.cz/covid-19)
 * [Český statistický úřad](https://www.czso.cz/)
+
+## Malaysia
+* [frhashim_nsesrimy](https://www.arcgis.com/home/item.html?id=352ec1b705104cc1925bb43d44649c68)
