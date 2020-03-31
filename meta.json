@@ -40,6 +40,10 @@
       ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0", "OBJECTID"],
       ["CTPRVN_CD", "발생자수"]
     ],
+    "Malaysia": [
+      ["6", "MpOjf90wsc96wTq1", "Case", "0", "OBJECTID"],
+      ["State", "Confirmed"]
+    ],
     "Netherlands": [
       ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "0", "OBJECTID"],
       ["Gemeentecode", "Aantal_Besmettingen"]

@@ -35,11 +35,6 @@ for place in places:
         date = datetime.date.fromisoformat(cases[-1]["DatumHlaseni"])
         for row in cases:
             main[row["KHS"].lstrip("CZ0")]["cases"] += 1
-    elif place == "Malaysia":
-        with open((pathlib.Path() / "cases").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
-            cases = json.loads(file.read())
-        for area in cases[place]:
-            main[area]["cases"] = cases[place][area]
     else:
         if place in meta["query_list"]:
             queries = meta["query_list"][place]
