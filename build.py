@@ -8,7 +8,7 @@ args = vars(parser.parse_args())
 if args["place"] != None:
     places = [args["place"]]
 else:
-    places = ["Australia", "Canada", "Berlin", "Italy", "Japan", "Korea", "Netherlands", "UK", "London", "US", "New York CSA", "Spain", "Taiwan"]
+    places = ["Australia", "Canada", "Berlin", "Italy", "Japan", "Korea", "Netherlands", "UK", "England", "London", "US", "New York CSA", "Spain", "Taiwan"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
@@ -39,6 +39,8 @@ for place in places:
     else:
         if place == "UK":
             queries = ["UK-1", "UK-2"]
+        elif place == "London":
+            queries = ["England"]
         elif place == "New York CSA":
             queries = ["New York CSA-1", "New York"]
         else:
@@ -73,7 +75,7 @@ for place in places:
             print("Error fetching data for", place)
             continue
 
-    if place in ["Germany", "Berlin", "Netherlands", "London", "New York CSA", "New York"]:
+    if place in ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York"]:
         unit = 10000
     else:
         unit = 1000000
