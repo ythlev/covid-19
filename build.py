@@ -52,7 +52,7 @@ for place in places:
                 with urllib.request.urlopen(url1) as response:
                     date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
                     date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
-                url2 = url + "query?where={}%3E0&outFields=*&returnGeometry=false&f=pjson".format(
+                url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&f=pjson".format(
                     meta["query"][query][0][4],
                     meta["query"][query][1][0],
                     meta["query"][query][1][1],
