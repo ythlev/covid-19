@@ -55,7 +55,7 @@ for place in places:
                 url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&f=pjson".format(
                     meta["query"][query][0][4],
                     meta["query"][query][1][0],
-                    meta["query"][query][1][1],
+                    urllib.parse.quote(meta["query"][query][1][1])
                 )
                 with urllib.request.urlopen(url2) as response:
                     if place == "US":
