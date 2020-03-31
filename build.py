@@ -65,7 +65,10 @@ for place in places:
                     for entry in json.loads(response.read())["features"][start:]:
                         key = str(entry["attributes"][meta["query"][query][1][0]]).lstrip("0")
                         if key in main:
-                            main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
+                            if place == "Japan" and key != "Unknown":
+                                main[key]["cases"] += 1
+                            else:
+                                main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
         except:
             print("Error fetching data for", place)
             continue
