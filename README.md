@@ -58,3 +58,7 @@ Adapted from Statistics Canada, Health region boundary files, 21 March 2020. Thi
 ## Korea
 * [serina.son](https://www.arcgis.com/home/item.html?id=948eac6dedcf47e3b15d9fec2fe24010)
 * [igismap.com](https://www.igismap.com/download-south-korea-shapefile/)
+
+## Czechia
+* [Ministerstvo zdravotnictví ČR](https://onemocneni-aktualne.mzcr.cz/covid-19)
+* [Český statistický úřad](https://www.czso.cz/)

@@ -29,6 +29,12 @@ for place in places:
             cases = json.loads(response.read())
         for row in cases:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
+    elif place == "Czechia":
+        with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v1/covid-19/osoby.json") as response:
+            cases = json.loads(response.read())
+        date = datetime.date.fromisoformat(cases[-1]["DatumHlaseni"])
+        for row in cases:
+            main[row["KHS"].lstrip("CZ0")]["cases"] += 1
     elif place == "Malaysia":
         with open((pathlib.Path() / "cases").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
             cases = json.loads(file.read())

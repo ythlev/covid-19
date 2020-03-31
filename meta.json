@@ -1,6 +1,6 @@
 {
   "colour": ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"],
-  "places": ["Australia", "Canada", "Berlin", "Italy", "Japan", "Korea", "Netherlands", "UK", "England", "London", "US", "New York CSA", "Spain", "Taiwan"],
+  "places": ["Australia", "Canada", "Czechia", "Berlin", "Italy", "Japan", "Korea", "Netherlands", "UK", "England", "London", "US", "New York CSA", "Spain", "Taiwan"],
   "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York"],
   "query_list": {
     "UK": ["UK-1", "UK-2"],
