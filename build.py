@@ -5,18 +5,16 @@ parser = argparse.ArgumentParser(description = "This script generates svg maps f
 parser.add_argument("-p", "--place", help = "Name of place to generate; by default, maps for select places are generated")
 args = vars(parser.parse_args())
 
-if args["place"] != None:
-    places = [args["place"]]
-else:
-    places = ["Australia", "Canada", "Berlin", "Italy", "Japan", "Korea", "Netherlands", "UK", "England", "London", "US", "New York CSA", "Spain", "Taiwan"]
-
-with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
-    population = json.loads(file.read())
-
 with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
     meta = json.loads(file.read())
 
-colour = ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"]
+if args["place"] != None:
+    places = [args["place"]]
+else:
+    places = meta["places"]
+
+with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
+    population = json.loads(file.read())
 
 for place in places:
     main = {}
@@ -37,30 +35,26 @@ for place in places:
         for area in cases[place]:
             main[area]["cases"] = cases[place][area]
     else:
-        if place == "UK":
-            queries = ["UK-1", "UK-2"]
-        elif place == "London":
-            queries = ["England"]
-        elif place == "New York CSA":
-            queries = ["New York CSA-1", "New York"]
+        if place in meta["query_list"]:
+            queries = meta["query_list"][place]
         else:
             queries = [place]
         try:
             for query in queries:
                 url = "https://services{}.arcgis.com/{}/arcgis/rest/services/{}/FeatureServer/{}/".format(
-                    meta[query][0][0],
-                    meta[query][0][1],
-                    urllib.parse.quote(meta[query][0][2]),
-                    meta[query][0][3],
+                    meta["query"][query][0][0],
+                    meta["query"][query][0][1],
+                    urllib.parse.quote(meta["query"][query][0][2]),
+                    meta["query"][query][0][3],
                 )
                 url1 = url + "?f=pjson"
                 with urllib.request.urlopen(url1) as response:
                     date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
                     date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
                 url2 = url + "query?where={}%3E0&outFields=*&returnGeometry=false&f=pjson".format(
-                    meta[query][0][4],
-                    meta[query][1][0],
-                    meta[query][1][1],
+                    meta["query"][query][0][4],
+                    meta["query"][query][1][0],
+                    meta["query"][query][1][1],
                 )
                 with urllib.request.urlopen(url2) as response:
                     if place == "US":
@@ -68,14 +62,14 @@ for place in places:
                     else:
                         start = 0
                     for entry in json.loads(response.read())["features"][start:]:
-                        key = str(entry["attributes"][meta[query][1][0]]).lstrip("0")
+                        key = str(entry["attributes"][meta["query"][query][1][0]]).lstrip("0")
                         if key in main:
-                            main[key]["cases"] = int(entry["attributes"][meta[query][1][1]])
+                            main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
         except:
             print("Error fetching data for", place)
             continue
 
-    if place in ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York"]:
+    if place in meta["10000"]:
         unit = 10000
     else:
         unit = 1000000
@@ -108,7 +102,7 @@ for place in places:
                                 i += 1
                             else:
                                 break
-                        file_out.write(row.replace('id="{}"'.format(area), 'style="fill:{}"'.format(colour[i])))
+                        file_out.write(row.replace('id="{}"'.format(area), 'style="fill:{}"'.format(meta["colour"][i])))
                         written = True
                         break
                 if written == False:

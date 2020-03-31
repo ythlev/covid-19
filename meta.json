@@ -1,70 +1,80 @@
 {
-  "Australia": [
-    ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0", "OBJECTID"],
-    ["ISO_SUB", "Cases"]
-  ],
-  "Canada": [
-    ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0", "OBJECTID"],
-    ["HR_UID", "CaseCount"]
-  ],
-  "France": [
-    ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "0", "OBJECTID"],
-    ["code_insee", "nb_cas"]
-  ],
-  "Germany": [
-    ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
-    ["RS", "cases"]
-  ],
-  "Berlin": [
-    ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
-    ["RS", "cases"]
-  ],
-  "Italy": [
-    ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "0", "OBJECTID"],
-    ["sigla_provincia", "totale_casi"]
-  ],
-  "Japan": [
-    ["6", "5jNaHNYe2AnnqRnS", "COVID19_Pref_JPN", "0", "OBJECTID"],
-    ["COVID_19_pref01_csv_PrefID", "COVID_19_pref01_csv_date0329"]
-  ],
-  "Korea": [
-    ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0", "OBJECTID"],
-    ["CTPRVN_CD", "발생자수"]
-  ],
-  "Netherlands": [
-    ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "0", "OBJECTID"],
-    ["Gemeentecode", "Aantal_Besmettingen"]
-  ],
-  "Poland": [
-    ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
-    ["jpt_nazwa_", "SUM_Confirmed"]
-  ],
-  "Spain":[
-    ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
-    ["Codigo", "TotalConfirmados"]
-  ],
-  "UK-1": [
-    ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "0", "FID"],
-    ["GSS_CD", "TotalCases"]
-  ],
-  "UK-2": [
-    ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "0", "FID"],
-    ["GSS_CD", "TotalCases"]
-  ],
-  "England": [
-    ["1", "0IrmI40n5ZYxTUrV", "CountyUAs_cases", "0", "FID"],
-    ["GSS_CD", "TotalCases"]
-  ],
-  "US": [
-    ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "OBJECTID"],
-    ["Province_State", "Confirmed"]
-  ],
-  "New York CSA-1": [
-    ["1", "0MSEUqKaxRlEPj5g", "ncov_cases_US", "0", "OBJECTID"],
-    ["FIPS", "Confirmed"]
-  ],
-  "New York": [
-    ["1", "LUqvaC60LFeidJsA", "Cases_current", "0", "OBJECTID"],
-    ["name", "confirmed"]
-  ]
+  "colour": ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"],
+  "places": ["Australia", "Canada", "Berlin", "Italy", "Japan", "Korea", "Netherlands", "UK", "England", "London", "US", "New York CSA", "Spain", "Taiwan"],
+  "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York"],
+  "query_list": {
+    "UK": ["UK-1", "UK-2"],
+    "London": ["England"],
+    "New York CSA": ["New York CSA-1", "New York"]
+  },
+  "query": {
+    "Australia": [
+      ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0", "OBJECTID"],
+      ["ISO_SUB", "Cases"]
+    ],
+    "Canada": [
+      ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0", "OBJECTID"],
+      ["HR_UID", "CaseCount"]
+    ],
+    "France": [
+      ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "0", "OBJECTID"],
+      ["code_insee", "nb_cas"]
+    ],
+    "Germany": [
+      ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
+      ["RS", "cases"]
+    ],
+    "Berlin": [
+      ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
+      ["RS", "cases"]
+    ],
+    "Italy": [
+      ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "0", "OBJECTID"],
+      ["sigla_provincia", "totale_casi"]
+    ],
+    "Japan": [
+      ["6", "5jNaHNYe2AnnqRnS", "COVID19_Pref_JPN", "0", "OBJECTID"],
+      ["COVID_19_pref01_csv_PrefID", "COVID_19_pref01_csv_date0329"]
+    ],
+    "Korea": [
+      ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0", "OBJECTID"],
+      ["CTPRVN_CD", "발생자수"]
+    ],
+    "Netherlands": [
+      ["", "nSZVuSZjHpEZZbRo", "Aantal_besmettingen_per_1000_inwoners", "0", "OBJECTID"],
+      ["Gemeentecode", "Aantal_Besmettingen"]
+    ],
+    "Poland": [
+      ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
+      ["jpt_nazwa_", "SUM_Confirmed"]
+    ],
+    "Spain":[
+      ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
+      ["Codigo", "TotalConfirmados"]
+    ],
+    "UK-1": [
+      ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "0", "FID"],
+      ["GSS_CD", "TotalCases"]
+    ],
+    "UK-2": [
+      ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "0", "FID"],
+      ["GSS_CD", "TotalCases"]
+    ],
+    "England": [
+      ["1", "0IrmI40n5ZYxTUrV", "CountyUAs_cases", "0", "FID"],
+      ["GSS_CD", "TotalCases"]
+    ],
+    "US": [
+      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "OBJECTID"],
+      ["Province_State", "Confirmed"]
+    ],
+    "New York CSA-1": [
+      ["1", "0MSEUqKaxRlEPj5g", "ncov_cases_US", "0", "OBJECTID"],
+      ["FIPS", "Confirmed"]
+    ],
+    "New York": [
+      ["1", "LUqvaC60LFeidJsA", "Cases_current", "0", "OBJECTID"],
+      ["name", "confirmed"]
+    ]
+  }
 }
