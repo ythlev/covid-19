@@ -54,7 +54,7 @@ for place in places:
                     date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
                 url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&f=pjson".format(
                     meta["query"][query][0][4],
-                    meta["query"][query][1][0],
+                    urllib.parse.quote(meta["query"][query][1][0]),
                     urllib.parse.quote(meta["query"][query][1][1])
                 )
                 with urllib.request.urlopen(url2) as response:
@@ -65,7 +65,12 @@ for place in places:
                     for entry in json.loads(response.read())["features"][start:]:
                         key = str(entry["attributes"][meta["query"][query][1][0]]).lstrip("0")
                         if key in main:
-                            main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
+                            if place == "Japan":
+                                main[key]["cases"] += 1
+                            else:
+                                main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
+                        elif key != "NA":
+                            print("Key", key, "not found")
         except:
             print("Error fetching data for", place)
             continue
