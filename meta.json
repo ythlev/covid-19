@@ -36,8 +36,8 @@
       ["sigla_provincia", "totale_casi"]
     ],
     "Japan": [
-      ["6", "5jNaHNYe2AnnqRnS", "COVID19_JapanData", "0", "OBJECTID"],
-      ["Hospital_Pref", ""]
+      ["6", "5jNaHNYe2AnnqRnS", "COVID19_Pref_JPN", "0", "OBJECTID"],
+      ["COVID_19_pref01_csv_PrefID", "COVID_19_pref01_csv_date0329"]
     ],
     "Korea": [
       ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0", "OBJECTID"],
