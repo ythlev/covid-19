@@ -34,13 +34,16 @@ for place in places:
             metadata = json.loads(response.read())["result"]
             date = datetime.datetime.fromisoformat(metadata["metadata_modified"])
     elif place == "Czechia":
-        with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v1/covid-19/osoby.json") as response:
+        with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v1/covid-19/osoby.min.json") as response:
             cases = json.loads(response.read())
-        date = datetime.date.fromtimestamp(0)
         for row in cases:
             main[row["KHS"].lstrip("CZ0")]["cases"] += 1
-            if datetime.date.fromisoformat(row["DatumHlaseni"]) > date:
-                date = datetime.date.fromisoformat(row["DatumHlaseni"])
+        with urllib.request.urlopen(
+            "https://opendata.mzcr.cz/api/3/action/package_show" +
+            "?id=covid-19-prehled-osob-s-prokazanou-nakazou-dle-hlaseni-krajskych-hygienickych-stanic"
+        ) as response:
+            metadata = json.loads(response.read())["result"]
+            date = datetime.datetime.fromisoformat(metadata["metadata_modified"])
     else:
         if place in meta["query_list"]:
             queries = meta["query_list"][place]
