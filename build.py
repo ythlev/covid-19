@@ -24,6 +24,7 @@ for place in places:
             "cases": 0
         }
     date = datetime.date.today()
+    unused = 0
     if place == "Taiwan":
         with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
             cases = json.loads(response.read())
@@ -69,8 +70,10 @@ for place in places:
                                 main[key]["cases"] += 1
                             else:
                                 main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
-                        elif key != "NA":
-                            print("Key", key, "not found")
+                        elif key != None and key != "None" and entry["attributes"][meta["query"][query][1][1]] != None:
+                            if args["place"] != None or unused < 9:
+                                print(key, entry["attributes"][meta["query"][query][1][1]])
+                            unused += 1
         except:
             print("Error fetching data for", place)
             continue
@@ -127,4 +130,4 @@ for place in places:
     cases = []
     for area in main:
         cases.append(main[area]["cases"])
-    print("{}: {} cases total in {} areas".format(place, sum(cases), len(cases)))
+    print("{}: {} cases total in {} areas; {} figures unused".format(place, sum(cases), len(cases), unused))
