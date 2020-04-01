@@ -53,7 +53,7 @@ for place in places:
                 with urllib.request.urlopen(url1) as response:
                     date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
                     date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
-                url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&f=pjson".format(
+                url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&returnExceededLimitFeatures=true&f=pjson".format(
                     meta["query"][query][0][4],
                     urllib.parse.quote(meta["query"][query][1][0]),
                     urllib.parse.quote(meta["query"][query][1][1])
@@ -70,10 +70,15 @@ for place in places:
                                 main[key]["cases"] += 1
                             else:
                                 main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
-                        elif key != None and key != "None" and entry["attributes"][meta["query"][query][1][1]] != None:
-                            if args["place"] != None or unused < 9:
-                                print(key, entry["attributes"][meta["query"][query][1][1]])
-                            unused += 1
+                        elif key not in [None, "None", "NA"]:
+                            if meta["query"][query][1][1] not in entry["attributes"]:
+                                if args["place"] != None or unused < 9:
+                                    print(key)
+                                unused += 1
+                            elif entry["attributes"][meta["query"][query][1][1]] != None:
+                                if args["place"] != None or unused < 9:
+                                    print(key, entry["attributes"][meta["query"][query][1][1]])
+                                unused += 1
         except:
             print("Error fetching data for", place)
             continue
