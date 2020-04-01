@@ -30,6 +30,9 @@ for place in places:
             cases = json.loads(response.read())
         for row in cases:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
+        with urllib.request.urlopen("https://data.cdc.gov.tw/api/3/action/package_show?id=aagstable-weekly-19cov") as response:
+            metadata = json.loads(response.read())["result"]
+            date = datetime.datetime.fromisoformat(metadata["metadata_modified"])
     elif place == "Czechia":
         with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v1/covid-19/osoby.json") as response:
             cases = json.loads(response.read())
