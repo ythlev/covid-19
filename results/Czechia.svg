@@ -11,10 +11,10 @@
     </g>
     <g font-size="30" id="g971" font-family="Verdana" fill="#000">
       <text xml:space="preserve" x="70" y="1050" id="text907">
-        <tspan id="tspan905" x="70" y="1050">≥ 434</tspan>
+        <tspan id="tspan905" x="70" y="1050">≥ 436</tspan>
       </text>
       <text id="text921" y="1000" x="70" xml:space="preserve">
-        <tspan y="1000" x="70" id="tspan919">≥ 332</tspan>
+        <tspan y="1000" x="70" id="tspan919">≥ 333</tspan>
       </text>
       <text xml:space="preserve" x="70" y="950" id="text925">
         <tspan id="tspan923" x="70" y="950">≥ 253</tspan>
@@ -29,7 +29,7 @@
         <tspan y="800" x="70" id="tspan935">&lt; 162</tspan>
       </text>
       <text xml:space="preserve" x="20" y="750" id="text941">
-        <tspan id="tspan939" x="20" y="750">2020-03-31</tspan>
+        <tspan id="tspan939" x="20" y="750">2020-04-01</tspan>
       </text>
     </g>
   </g>

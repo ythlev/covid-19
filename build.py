@@ -23,9 +23,9 @@ for place in places:
             "population": population[place][area],
             "cases": 0
         }
-    date = datetime.date.today()
     unused = 0
     if place == "Taiwan":
+        date = datetime.date.today()
         with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
             cases = json.loads(response.read())
         for row in cases:
@@ -33,9 +33,11 @@ for place in places:
     elif place == "Czechia":
         with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v1/covid-19/osoby.json") as response:
             cases = json.loads(response.read())
-        date = datetime.date.fromisoformat(cases[-1]["DatumHlaseni"])
+        date = datetime.date.fromtimestamp(0)
         for row in cases:
             main[row["KHS"].lstrip("CZ0")]["cases"] += 1
+            if datetime.date.fromisoformat(row["DatumHlaseni"]) > date:
+                date = datetime.date.fromisoformat(row["DatumHlaseni"])
     else:
         if place in meta["query_list"]:
             queries = meta["query_list"][place]
