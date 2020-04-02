@@ -4,7 +4,7 @@
     "Australia", "Canada", "Czechia", "Berlin", "Italy", "Japan", "Korea","Malaysia", "Netherlands", "UK", "England", "London", "US", "New York CSA",
     "Spain", "Taiwan"
   ],
-  "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York"],
+  "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York", "Pennsylvania"],
   "query_list": {
     "UK": ["UK-1", "UK-2"],
     "London": ["England"],
@@ -78,6 +78,10 @@
     "New York": [
       ["1", "LUqvaC60LFeidJsA", "Cases_current", "0", "OBJECTID"],
       ["name", "confirmed"]
+    ],
+    "Pennsylvania": [
+      ["1", "0MSEUqKaxRlEPj5g", "ncov_cases_US", "0", "OBJECTID"],
+      ["FIPS", "Confirmed"]
     ]
   }
 }
