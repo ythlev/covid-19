@@ -44,6 +44,12 @@ for place in places:
         ) as response:
             metadata = json.loads(response.read())["result"]
             date = datetime.datetime.fromisoformat(metadata["metadata_modified"])
+    elif place == "Japan":
+        with urllib.request.urlopen("https://www.stopcovid19.jp/data/covid19japan.json") as response:
+            data = json.loads(response.read())
+        for row in data["area"]:
+            main[row["name"]]["cases"] = int(row["npatients"])
+        date = datetime.datetime.fromisoformat(data["lastUpdate"])
     else:
         if place in meta["query_list"]:
             queries = meta["query_list"][place]
