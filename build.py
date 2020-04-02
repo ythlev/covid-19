@@ -34,16 +34,16 @@ for place in places:
             metadata = json.loads(response.read())["result"]
             date = datetime.datetime.fromisoformat(metadata["metadata_modified"])
     elif place == "Czechia":
-        with urllib.request.urlopen("https://onemocneni-aktualne.mzcr.cz/api/v1/covid-19/osoby.min.json") as response:
-            cases = json.loads(response.read())
-        for row in cases:
-            main[row["KHS"].lstrip("CZ0")]["cases"] += 1
-        with urllib.request.urlopen(
-            "https://opendata.mzcr.cz/api/3/action/package_show" +
-            "?id=covid-19-prehled-osob-s-prokazanou-nakazou-dle-hlaseni-krajskych-hygienickych-stanic"
-        ) as response:
-            metadata = json.loads(response.read())["result"]
-            date = datetime.datetime.fromisoformat(metadata["metadata_modified"])
+        with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/K373S4uCFR9W1K8ei/records/LATEST?disableRedirect=true") as response:
+            data = json.loads(response.read())
+        for row in data["infectedByRegion"]:
+            if row["name"] in main:
+                main[row["name"]]["cases"] = row["value"]
+            else:
+                if args["place"] != None or unused < 9:
+                    print(row["name"])
+                unused += 1
+        date = datetime.datetime.fromisoformat(data["lastUpdatedAtSource"].rstrip("Z"))
     elif place == "Japan":
         with urllib.request.urlopen("https://www.stopcovid19.jp/data/covid19japan.json") as response:
             data = json.loads(response.read())
@@ -69,7 +69,7 @@ for place in places:
                     date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
                 url2 = url + "query?where={}%3E0&outFields={},{}&returnGeometry=false&returnExceededLimitFeatures=true&f=pjson".format(
                     meta["query"][query][0][4],
-                    urllib.parse.quote(meta["query"][query][1][0]),
+                    meta["query"][query][1][0],
                     urllib.parse.quote(meta["query"][query][1][1])
                 )
                 with urllib.request.urlopen(url2) as response:
@@ -80,19 +80,11 @@ for place in places:
                     for entry in json.loads(response.read())["features"][start:]:
                         key = str(entry["attributes"][meta["query"][query][1][0]]).lstrip("0")
                         if key in main:
-                            if place == "Japan":
-                                main[key]["cases"] += 1
-                            else:
-                                main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
-                        elif key not in [None, "None", "NA"]:
-                            if meta["query"][query][1][1] not in entry["attributes"]:
-                                if args["place"] != None or unused < 9:
-                                    print(key)
-                                unused += 1
-                            elif entry["attributes"][meta["query"][query][1][1]] != None:
-                                if args["place"] != None or unused < 9:
-                                    print(key, entry["attributes"][meta["query"][query][1][1]])
-                                unused += 1
+                            main[key]["cases"] = int(entry["attributes"][meta["query"][query][1][1]])
+                        elif key not in [None, "None", "NA"] and entry["attributes"][meta["query"][query][1][1]] != None:
+                            if args["place"] != None or unused < 9:
+                                print(key, entry["attributes"][meta["query"][query][1][1]])
+                            unused += 1
         except:
             print("Error fetching data for", place)
             continue

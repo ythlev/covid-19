@@ -7,7 +7,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 * [內政部戶政司](https://gis.ris.gov.tw/dashboard.html?key=B01)
 
 ## Japan
-* [ジャッグジャパン株式会社](https://www.arcgis.com/home/item.html?id=6917515ec97b4916a49e71d94d4dcb82)
+* [Code for Japan](https://www.stopcovid19.jp/data/covid19japan.json)
 * [Geospatial Information Authority of Japan](https://www.gsi.go.jp/kankyochiri/gm_japan_e.html)
 * [Statistics Bureau, Ministry of Internal Affairs and Communications](https://www.stat.go.jp/english/data/nenkan/66nenkan/1431-02.html)
 
@@ -60,8 +60,10 @@ Adapted from Statistics Canada, Health region boundary files, 21 March 2020. Thi
 * [igismap.com](https://www.igismap.com/download-south-korea-shapefile/)
 
 ## Czechia
+* [covid19cz.cz](https://covid19cz.cz/projekty/data)
 * [Ministerstvo zdravotnictví ČR](https://onemocneni-aktualne.mzcr.cz/covid-19)
 * [Český statistický úřad](https://www.czso.cz/)
+* [data.gov.cz](https://data.gov.cz/%C4%8Dl%C3%A1nky/po%C4%8Det-potvrzen%C3%BDch-naka%C5%BEen%C3%BDch-covid-19-v-kraj%C3%ADch-%C4%8Dr)
 
 ## Malaysia
 * [frhashim_nsesrimy](https://www.arcgis.com/home/item.html?id=352ec1b705104cc1925bb43d44649c68)

@@ -35,10 +35,6 @@
       ["6", "L1SotImj1AAZY1eK", "riepilogo_province", "0", "OBJECTID"],
       ["sigla_provincia", "totale_casi"]
     ],
-    "Japan": [
-      ["6", "5jNaHNYe2AnnqRnS", "COVID19_JapanData", "0", "OBJECTID"],
-      ["受診都道府県コード", ""]
-    ],
     "Korea": [
       ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0", "OBJECTID"],
       ["CTPRVN_CD", "발생자수"]
