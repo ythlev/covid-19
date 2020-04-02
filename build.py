@@ -74,7 +74,7 @@ for place in places:
                 )
                 with urllib.request.urlopen(url2) as response:
                     if place == "US":
-                        start = 236
+                        start = 255
                     else:
                         start = 0
                     for entry in json.loads(response.read())["features"][start:]:
