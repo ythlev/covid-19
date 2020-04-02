@@ -16,25 +16,25 @@
       </g>
       <g id="g971" font-size="30px" font-family="Verdana" fill="#000">
         <text id="text907" y="1050" x="70" xml:space="preserve">
-          <tspan y="1050" x="70" id="tspan905">≥ 4880</tspan>
+          <tspan y="1050" x="70" id="tspan905">≥ 5232</tspan>
         </text>
         <text xml:space="preserve" x="70" y="1000" id="text921">
-          <tspan id="tspan919" x="70" y="1000">≥ 3342</tspan>
+          <tspan id="tspan919" x="70" y="1000">≥ 3583</tspan>
         </text>
         <text id="text925" y="950" x="70" xml:space="preserve">
-          <tspan y="950" x="70" id="tspan923">≥ 2146</tspan>
+          <tspan y="950" x="70" id="tspan923">≥ 2301</tspan>
         </text>
         <text xml:space="preserve" x="70" y="900" id="text929">
-          <tspan id="tspan927" x="70" y="900">≥ 1291</tspan>
+          <tspan id="tspan927" x="70" y="900">≥ 1385</tspan>
         </text>
         <text id="text933" y="850" x="70" xml:space="preserve">
-          <tspan y="850" x="70" id="tspan931">≥ 779</tspan>
+          <tspan y="850" x="70" id="tspan931">≥ 835</tspan>
         </text>
         <text xml:space="preserve" x="70" y="800" id="text937">
-          <tspan id="tspan935" x="70" y="800">&lt; 779</tspan>
+          <tspan id="tspan935" x="70" y="800">&lt; 835</tspan>
         </text>
         <text id="text941" y="750" x="20" xml:space="preserve">
-          <tspan y="750" x="20" id="tspan939">2020-04-01</tspan>
+          <tspan y="750" x="20" id="tspan939">2020-04-02</tspan>
         </text>
       </g>
     </g>
