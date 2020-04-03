@@ -15,67 +15,67 @@
   "query": {
     "Australia": [
       ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0", "OBJECTID"],
-      ["ISO_SUB", "Cases"]
+      ["ISO_SUB", "Cases", ""]
     ],
     "Canada": [
       ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0", "OBJECTID"],
-      ["HR_UID", "CaseCount"]
+      ["HR_UID", "CaseCount", "TotalPop2019"]
     ],
     "France": [
       ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "0", "OBJECTID"],
-      ["code_insee", "nb_cas"]
+      ["code_insee", "nb_cas", ""]
     ],
     "Germany": [
       ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
-      ["RS", "cases_per_100k"]
+      ["RS", "cases_per_100k", ""]
     ],
     "Italy": [
       ["6", "L1SotImj1AAZY1eK", "DPC_dati_COVID19_Province", "0", "OBJECTID"],
-      ["sigla_provincia", "totale_casi"]
+      ["sigla_provincia", "totale_casi", ""]
     ],
     "Korea": [
       ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0", "OBJECTID"],
-      ["CTPRVN_CD", "발생자수"]
+      ["CTPRVN_CD", "발생자수", ""]
     ],
     "Malaysia": [
       ["6", "MpOjf90wsc96wTq1", "Case", "0", "OBJECTID"],
-      ["State", "Confirmed"]
+      ["State", "Confirmed", ""]
     ],
     "Netherlands": [
       ["", "nSZVuSZjHpEZZbRo", "Coronavirus_ziekenhuisopnamen_vlak", "0", "OBJECTID"],
-      ["Gemeentecode", "Aantal_per_100000"]
+      ["Gemeentecode", "Aantal_per_100000", ""]
     ],
     "Poland": [
       ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
-      ["jpt_nazwa_", "SUM_Confirmed"]
+      ["jpt_nazwa_", "SUM_Confirmed", ""]
     ],
     "Spain":[
       ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
-      ["Codigo", "TotalConfirmados"]
+      ["Codigo", "TotalConfirmados", "PAD_2C02"]
     ],
     "UK-1": [
       ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "0", "FID"],
-      ["GSS_CD", "TotalCases"]
+      ["GSS_CD", "TotalCases", ""]
     ],
     "UK-2": [
       ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "0", "FID"],
-      ["GSS_CD", "TotalCases"]
+      ["GSS_CD", "TotalCases", ""]
     ],
     "England": [
       ["1", "0IrmI40n5ZYxTUrV", "CountyUAs_cases", "0", "FID"],
-      ["GSS_CD", "TotalCases"]
+      ["GSS_CD", "TotalCases", ""]
     ],
     "US": [
       ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "OBJECTID"],
-      ["Province_State", "Confirmed"]
+      ["Province_State", "Confirmed", ""]
     ],
     "US counties": [
       ["1", "0MSEUqKaxRlEPj5g", "ncov_cases_US", "0", "OBJECTID"],
-      ["FIPS", "Confirmed"]
+      ["FIPS", "Confirmed", ""]
     ],
     "New York": [
       ["1", "LUqvaC60LFeidJsA", "Cases_current", "0", "OBJECTID"],
-      ["name", "confirmed"]
+      ["name", "confirmed", ""]
     ]
   }
 }
