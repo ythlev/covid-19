@@ -46,7 +46,7 @@ Adapted from Statistics Canada, Health region boundary files, 21 March 2020. Thi
 * [Umberto Rosini](https://www.arcgis.com/home/item.html?id=b0c68bce2cce478eaac82fe38d4138b1)
 
 ## Netherlands
-* [Esri Nederland](https://www.arcgis.com/home/item.html?id=20d392a8a3b84506b7f9c2bb0f20ae8c)
+* [Esri Nederland](https://www.arcgis.com/home/item.html?id=c36f6ae38c1c4adc804dff1ff7ec1cdd)
 
 ## Spain
 * [Esri España](https://www.arcgis.com/home/item.html?id=eb502ad861b7432a82cadad12c77851c)
