@@ -6,6 +6,7 @@
   ],
   "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York", "Pennsylvania"],
   "query_list": {
+    "Berlin": ["Germany"],
     "UK": ["UK-1", "UK-2"],
     "London": ["England"],
     "New York CSA": ["US counties", "New York"],
@@ -26,11 +27,7 @@
     ],
     "Germany": [
       ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
-      ["RS", "cases"]
-    ],
-    "Berlin": [
-      ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
-      ["RS", "cases"]
+      ["RS", "cases_per_100k"]
     ],
     "Italy": [
       ["6", "L1SotImj1AAZY1eK", "DPC_dati_COVID19_Province", "0", "OBJECTID"],
@@ -46,7 +43,7 @@
     ],
     "Netherlands": [
       ["", "nSZVuSZjHpEZZbRo", "Coronavirus_ziekenhuisopnamen_vlak", "0", "OBJECTID"],
-      ["Gemeentecode", "Aantal"]
+      ["Gemeentecode", "Aantal_per_100000"]
     ],
     "Poland": [
       ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
