@@ -49,7 +49,11 @@ for place in places:
             data = json.loads(response.read())
         for row in data["area"]:
             main[row["name"]]["cases"] = int(row["npatients"])
-        date = datetime.datetime.fromisoformat(data["lastUpdate"])
+        if data["lastUpdate"] != "--":
+            date = datetime.datetime.fromisoformat(data["lastUpdate"])
+        else:
+            date = datetime.date.today()
+            print("No date available for Japan; current date used")
     else:
         if place in meta["query_list"]:
             queries = meta["query_list"][place]
@@ -114,7 +118,9 @@ for place in places:
 
     with open((pathlib.Path() / "template" / place).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / place).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
-            if threshold[1] > 10:
+            if threshold[5] >= 10000:
+                num = "{:_.0f}"
+            elif threshold[1] > 10:
                 num = "{:.0f}"
             else:
                 num = "{:.2f}"
@@ -138,9 +144,9 @@ for place in places:
                         for i in range(6):
                             if row.find('level{}'.format(i)) > -1:
                                 if i == 0:
-                                    file_out.write(row.replace('level{}'.format(i), "&lt; " + num.format(threshold[1])))
+                                    file_out.write(row.replace('level{}'.format(i), "&lt; " + num.format(threshold[1]).replace("_", "&#8201;")))
                                 else:
-                                    file_out.write(row.replace('level{}'.format(i), "≥ " + num.format(threshold[i])))
+                                    file_out.write(row.replace('level{}'.format(i), "≥ " + num.format(threshold[i]).replace("_", "&#8201;")))
                     else:
                         file_out.write(row)
 
