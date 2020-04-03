@@ -99,8 +99,11 @@ for place in places:
 
     values = []
     for area in main:
-        main[area]["pcapita"] = main[area]["cases"] / main[area]["population"] * unit
-        values.append(main[area]["pcapita"])
+        if main[area]["population"] > 0:
+            main[area]["pcapita"] = main[area]["cases"] / main[area]["population"] * unit
+            values.append(main[area]["pcapita"])
+        else:
+            print("Population for", area, "not found")
 
     q = statistics.quantiles(values, n = 100, method = "inclusive")
     step = math.sqrt(statistics.mean(values) - q[0]) / 3

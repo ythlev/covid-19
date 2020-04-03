@@ -47,7 +47,7 @@
     ],
     "Poland": [
       ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
-      ["jpt_nazwa_", "SUM_Confirmed", ""]
+      ["jpt_nazwa_", "SUM_Confirmed", "Populacja"]
     ],
     "Spain":[
       ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
