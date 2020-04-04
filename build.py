@@ -26,13 +26,11 @@ for place in places:
     unused = 0
     if place == "Taiwan":
         date = datetime.date.today()
-        with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json") as response:
+        with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Age_County_Gender_19Cov.json") as response:
             cases = json.loads(response.read())
         for row in cases:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
-        with urllib.request.urlopen("https://data.cdc.gov.tw/api/3/action/package_show?id=aagstable-weekly-19cov") as response:
-            metadata = json.loads(response.read())["result"]
-            date = datetime.datetime.fromisoformat(metadata["metadata_modified"])
+        date = datetime.date.today()
     elif place == "Czechia":
         with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/K373S4uCFR9W1K8ei/records/LATEST?disableRedirect=true") as response:
             data = json.loads(response.read())
@@ -124,7 +122,7 @@ for place in places:
                 num = "{:.0f}"
             else:
                 num = "{:.2f}"
-                
+
             for row in file_in:
                 written = False
                 for area in main:
