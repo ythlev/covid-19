@@ -120,10 +120,11 @@ for place in places:
         with open((pathlib.Path() / "results" / place).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
             if threshold[5] >= 10000:
                 num = "{:_.0f}"
-            elif threshold[1] > 10:
+            elif threshold[1] >= 10:
                 num = "{:.0f}"
             else:
                 num = "{:.2f}"
+                
             for row in file_in:
                 written = False
                 for area in main:
