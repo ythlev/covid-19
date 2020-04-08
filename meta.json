@@ -74,8 +74,8 @@
       ["FIPS", "Confirmed", ""]
     ],
     "New York": [
-      ["1", "LUqvaC60LFeidJsA", "Cases_current", "0", "OBJECTID"],
-      ["name", "confirmed", ""]
+      ["6", "g0aLRCsb9E6XXVpC", "ny_counties_coronavirus", "0", "FID"],
+      ["NAME", "COVID_CASE", "POP2020"]
     ]
   }
 }
