@@ -30,17 +30,24 @@ for place in places:
         for row in cases:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
-    elif place == "UK" or place == "England":
+    elif place == "UK" or place == "England" or place == "London":
         with urllib.request.urlopen("https://c19pub.azureedge.net/data_202004161444.json") as response:
             data = json.loads(response.read())
         if place == "UK":
             for sub_data in [data["countries"], data["regions"]]:
                 for k, v in sub_data.items():
-                    if k != "E92000001":
+                    if k == "E92000001":
+                        unused += 1
+                    else:
                         main[k]["cases"] = v["totalCases"]["value"]
-        elif place == "England":
+        else:
             for k, v in data["utlas"].items():
-                main[k]["cases"] = v["totalCases"]["value"]
+                if k in main:
+                    main[k]["cases"] = v["totalCases"]["value"]
+                else:
+                    unused += 1
+                    if args["place"] != None or unused < 9:
+                        print(k, v["totalCases"]["value"])
         date = datetime.datetime.fromisoformat(data["lastUpdatedAt"].rstrip("Z"))
     elif place == "Czechia":
         with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/K373S4uCFR9W1K8ei/records/LATEST?disableRedirect=true") as response:
@@ -49,9 +56,9 @@ for place in places:
             if row["name"] in main:
                 main[row["name"]]["cases"] = row["value"]
             else:
+                unused += 1
                 if args["place"] != None or unused < 9:
                     print(row["name"])
-                unused += 1
         date = datetime.datetime.fromisoformat(data["lastUpdatedAtSource"].rstrip("Z"))
     elif place == "Japan":
         with urllib.request.urlopen("https://www.stopcovid19.jp/data/covid19japan.json") as response:
