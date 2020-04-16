@@ -25,8 +25,7 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 * [Bundesamt für Kartographie und Geodäsie Robert Koch-Institut](https://www.arcgis.com/home/item.html?id=917fc37a709542548cc3be077a786c17)
 
 ## UK
-* [Public Health England](https://www.arcgis.com/home/item.html?id=a51606bdfb824d65a63ef0ca65aac90f)
-* [Public Health England](https://www.arcgis.com/home/item.html?id=90f3893ff60e43c9ad785c8a9073c516)
+* [Public Health England, NHSX](https://coronavirus.data.gov.uk/)
 ### England, London
 * [Public Health England](https://www.arcgis.com/home/item.html?id=05c8423c9063412a92412874b306734b)
 * [Office for National Statistics](https://geoportal.statistics.gov.uk/datasets/counties-and-unitary-authorities-april-2019-boundaries-ew-bgc)

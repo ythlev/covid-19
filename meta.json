@@ -1,14 +1,12 @@
 {
   "colour": ["#fee5d9","#fcbba1","#fc9272","#fb6a4a","#de2d26","#a50f15"],
   "places": [
-    "Australia", "Canada", "Czechia", "Berlin", "Italy", "Japan", "Malaysia", "Netherlands", "UK", "England", "London", "US", "New York CSA",
-    "Spain", "Taiwan"
+    "Australia", "Canada", "Czechia", "Germany", "Berlin", "Italy", "Japan", "Korea", "Malaysia",
+    "Netherlands", "US", "New York", "New York CSA", "Spain", "Taiwan"
   ],
   "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York", "Pennsylvania"],
   "query_list": {
     "Berlin": ["Germany"],
-    "UK": ["UK-1", "UK-2"],
-    "London": ["England"],
     "New York CSA": ["US counties", "New York"],
     "Pennsylvania": ["US counties"]
   },
@@ -52,18 +50,6 @@
     "Spain":[
       ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
       ["Codigo", "TotalConfirmados", "PAD_2C02"]
-    ],
-    "UK-1": [
-      ["1", "0IrmI40n5ZYxTUrV", "UK_Countries_cases", "0", "FID"],
-      ["GSS_CD", "TotalCases", ""]
-    ],
-    "UK-2": [
-      ["1", "0IrmI40n5ZYxTUrV", "NHSR_Cases", "0", "FID"],
-      ["GSS_CD", "TotalCases", ""]
-    ],
-    "England": [
-      ["1", "0IrmI40n5ZYxTUrV", "CountyUAs_cases", "0", "FID"],
-      ["GSS_CD", "TotalCases", ""]
     ],
     "US": [
       ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "OBJECTID"],
