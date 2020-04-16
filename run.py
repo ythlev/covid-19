@@ -30,13 +30,17 @@ for place in places:
         for row in cases:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
-    elif place == "UK":
+    elif place == "UK" or place == "England":
         with urllib.request.urlopen("https://c19pub.azureedge.net/data_202004161444.json") as response:
             data = json.loads(response.read())
-        for sub_data in [data["countries"], data["regions"]]:
-            for k, v in sub_data.items():
-                if k != "E92000001":
-                    main[k]["cases"] = v["totalCases"]["value"]
+        if place == "UK":
+            for sub_data in [data["countries"], data["regions"]]:
+                for k, v in sub_data.items():
+                    if k != "E92000001":
+                        main[k]["cases"] = v["totalCases"]["value"]
+        elif place == "England":
+            for k, v in data["utlas"].items():
+                main[k]["cases"] = v["totalCases"]["value"]
         date = datetime.datetime.fromisoformat(data["lastUpdatedAt"].rstrip("Z"))
     elif place == "Czechia":
         with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/K373S4uCFR9W1K8ei/records/LATEST?disableRedirect=true") as response:
