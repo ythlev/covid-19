@@ -31,7 +31,7 @@ for place in places:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
     elif place == "UK" or place == "England" or place == "London":
-        with urllib.request.urlopen("https://c19pub.azureedge.net/data_202004161444.json") as response:
+        with urllib.request.urlopen("https://c19pub.azureedge.net/data_202004181457.json") as response:
             data = json.loads(response.read())
         if place == "UK":
             for sub_data in [data["countries"], data["regions"]]:
