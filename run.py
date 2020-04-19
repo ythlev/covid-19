@@ -31,7 +31,18 @@ for place in places:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
     elif place == "UK" or place == "England" or place == "London":
-        with urllib.request.urlopen("https://c19pub.azureedge.net/data_202004181457.json") as response:
+        date, text = 0, ""
+        import xml.etree.ElementTree as ET
+        with urllib.request.urlopen("https://publicdashacc.blob.core.windows.net/publicdata?restype=container&comp=list") as response:
+            root = ET.fromstring(response.read())
+        for name in root.iter("Name"):
+            if name.text.find("data_") > -1 and int(name.text[5:13]) > date:
+                date = int(name.text[5:13])
+                text = name.text
+
+        print("https://c19pub.azureedge.net/" + text)
+
+        with urllib.request.urlopen("https://c19pub.azureedge.net/" + text) as response:
             data = json.loads(response.read())
         if place == "UK":
             for sub_data in [data["countries"], data["regions"]]:
