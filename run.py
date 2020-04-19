@@ -40,8 +40,6 @@ for place in places:
                 date = int(name.text[5:13])
                 text = name.text
 
-        print("https://c19pub.azureedge.net/" + text)
-
         with urllib.request.urlopen("https://c19pub.azureedge.net/" + text) as response:
             data = json.loads(response.read())
         if place == "UK":
