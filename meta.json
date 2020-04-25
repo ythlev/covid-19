@@ -28,7 +28,7 @@
       ["RS", "cases_per_100k", ""]
     ],
     "Italy": [
-      ["6", "L1SotImj1AAZY1eK", "DPC_dati_COVID19_Province", "0", "OBJECTID"],
+      ["6", "L1SotImj1AAZY1eK", "dpc_province_covid19_new", "0", "OBJECTID"],
       ["sigla_provincia", "totale_casi", ""]
     ],
     "Korea": [
@@ -40,8 +40,8 @@
       ["State", "Confirmed", ""]
     ],
     "Netherlands": [
-      ["", "nSZVuSZjHpEZZbRo", "Coronavirus_ziekenhuisopnamen_vlak", "0", "OBJECTID"],
-      ["Gemeentecode", "Aantal_per_100000", ""]
+      ["", "nSZVuSZjHpEZZbRo", "Coronavirus_RIVM_vlakken_actueel", "0", "OBJECTID"],
+      ["Gemeentecode", "Meldingen_100000", ""]
     ],
     "Poland": [
       ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
