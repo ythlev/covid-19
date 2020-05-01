@@ -30,6 +30,7 @@ for place in places:
         for row in cases:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
+
     elif place == "UK" or place == "England" or place == "London":
         date, text = 0, ""
         import xml.etree.ElementTree as ET
@@ -39,7 +40,6 @@ for place in places:
             if name.text.find("data_") > -1 and int(name.text[5:13]) > date:
                 date = int(name.text[5:13])
                 text = name.text
-
         with urllib.request.urlopen("https://c19pub.azureedge.net/" + text) as response:
             data = json.loads(response.read())
         if place == "UK":
@@ -58,6 +58,7 @@ for place in places:
                     if args["place"] != None or unused < 9:
                         print(k, v["totalCases"]["value"])
         date = datetime.datetime.fromisoformat(data["lastUpdatedAt"].rstrip("Z"))
+
     elif place == "Czechia":
         with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/K373S4uCFR9W1K8ei/records/LATEST?disableRedirect=true") as response:
             data = json.loads(response.read())
@@ -69,6 +70,7 @@ for place in places:
                 if args["place"] != None or unused < 9:
                     print(row["name"])
         date = datetime.datetime.fromisoformat(data["lastUpdatedAtSource"].rstrip("Z"))
+
     elif place == "Japan":
         with urllib.request.urlopen("https://www.stopcovid19.jp/data/covid19japan.json") as response:
             data = json.loads(response.read())
@@ -79,6 +81,7 @@ for place in places:
         else:
             date = datetime.date.today()
             print("No date available for Japan; current date used")
+            
     else:
         if place in meta["query_list"]:
             queries = meta["query_list"][place]
