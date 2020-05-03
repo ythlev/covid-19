@@ -13,12 +13,12 @@
 </style>
 <g id="g1003" transform="matrix(0.63403322,0,0,0.63403322,980.53437,-140.632897)">
   <g id="g979">
-    <path fill="#fcbba1" d="M20 820H60V860H20z"/>
-    <path fill="#fc9272" d="M20 870H60V910H20z"/>
-    <path fill="#fb6a4a" d="M20 920H60V960H20z"/>
-    <path fill="#de2d26" d="M20 970H60V1010H20z"/>
-    <path fill="#fee5d9" d="M20 770H60V810H20z"/>
-    <path fill="#a50f15" d="M20 1020H60V1060H20z"/>
+    <path fill="#fdd49e" d="M20 820H60V860H20z"/>
+    <path fill="#fdbb84" d="M20 870H60V910H20z"/>
+    <path fill="#fc8d59" d="M20 920H60V960H20z"/>
+    <path fill="#e34a33" d="M20 970H60V1010H20z"/>
+    <path fill="#fef0d9" d="M20 770H60V810H20z"/>
+    <path fill="#b30000" d="M20 1020H60V1060H20z"/>
   </g>
   <g id="g971" font-size="30px" font-family="Verdana" fill="#000">
     <text id="text907" y="1050" x="70" xml:space="preserve">

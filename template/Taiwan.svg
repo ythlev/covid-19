@@ -25,12 +25,12 @@
       </text>
     </g>
     <g id="legend-boxes">
-      <path d="m -200 1646 h 40 v 40 h -40 z" fill="#fee5d9"/>
-      <path d="m -200 1696 h 40 v 40 h -40 z" fill="#fcbba1"/>
-      <path d="m -200 1746 h 40 v 40 h -40 z" fill="#fc9272"/>
-      <path d="m -200 1796 h 40 v 40 h -40 z" fill="#fb6a4a"/>
-      <path d="m -200 1846 h 40 v 40 h -40 z" fill="#de2d26"/>
-      <path d="m -200 1896 h 40 v 40 h -40 z" fill="#a50f15"/>
+      <path d="m -200 1646 h 40 v 40 h -40 z" fill="#fef0d9"/>
+      <path d="m -200 1696 h 40 v 40 h -40 z" fill="#fdd49e"/>
+      <path d="m -200 1746 h 40 v 40 h -40 z" fill="#fdbb84"/>
+      <path d="m -200 1796 h 40 v 40 h -40 z" fill="#fc8d59"/>
+      <path d="m -200 1846 h 40 v 40 h -40 z" fill="#e34a33"/>
+      <path d="m -200 1896 h 40 v 40 h -40 z" fill="#b30000"/>
     </g>
   </g>
   <g id="box" fill="none" stroke="#000" stroke-width="10">

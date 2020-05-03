@@ -2,12 +2,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="svg126" version="1.1" stroke-linejoin="round" stroke-linecap="round" height="1457" width="1440">
   <g transform="translate(4.617 621.688) scale(.76916)" id="g1003">
     <g id="g979">
-      <path id="path2" d="M20 820H60V860H20z" fill="#fcbba1"/>
-      <path id="path4" d="M20 870H60V910H20z" fill="#fc9272"/>
-      <path id="path6" d="M20 920H60V960H20z" fill="#fb6a4a"/>
-      <path id="path8" d="M20 970H60V1010H20z" fill="#de2d26"/>
-      <path id="path10" d="M20 770H60V810H20z" fill="#fee5d9"/>
-      <path id="path12" d="M20 1020H60V1060H20z" fill="#a50f15"/>
+      <path id="path2" d="M20 820H60V860H20z" fill="#fdd49e"/>
+      <path id="path4" d="M20 870H60V910H20z" fill="#fdbb84"/>
+      <path id="path6" d="M20 920H60V960H20z" fill="#fc8d59"/>
+      <path id="path8" d="M20 970H60V1010H20z" fill="#e34a33"/>
+      <path id="path10" d="M20 770H60V810H20z" fill="#fef0d9"/>
+      <path id="path12" d="M20 1020H60V1060H20z" fill="#b30000"/>
     </g>
     <g fill="#000" font-family="Verdana" font-size="30" id="g971">
       <text xml:space="preserve" x="70" y="1050" id="text907">

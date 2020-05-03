@@ -39,12 +39,12 @@
       <path d="m 873.47786,209.98814 0.30487,0.812 0.22643,0.285 0.57052,0.353 0.36336,-0.5348 0.77767,1.2408 0.57052,0.353 0.65287,-0.55536 1.20034,1.01308 -0.18962,0.97215 1.42791,0.70913 -1.95938,3.236 -0.91639,-0.479 -7.27233,-3.874 1.98434,-1.81 2.25889,-1.721" id="42077"/>
     </g>
     <g id="g1003" transform="matrix(.26458 0 0 .26458 127.715 -62.671)">
-      <path d="m 20,820 h 40 v 40 H 20 Z" fill="#fcbba1"/>
-      <path d="m 20,870 h 40 v 40 H 20 Z" fill="#fc9272"/>
-      <path d="m 20,920 h 40 v 40 H 20 Z" fill="#fb6a4a"/>
-      <path d="m 20,970 h 40 v 40 H 20 Z" fill="#de2d26"/>
-      <path d="m 20,770 h 40 v 40 H 20 Z" fill="#fee5d9"/>
-      <path d="m 20,1020 h 40 v 40 H 20 Z" fill="#a50f15"/>
+      <path d="m 20,820 h 40 v 40 H 20 Z" fill="#fdd49e"/>
+      <path d="m 20,870 h 40 v 40 H 20 Z" fill="#fdbb84"/>
+      <path d="m 20,920 h 40 v 40 H 20 Z" fill="#fc8d59"/>
+      <path d="m 20,970 h 40 v 40 H 20 Z" fill="#e34a33"/>
+      <path d="m 20,770 h 40 v 40 H 20 Z" fill="#fef0d9"/>
+      <path d="m 20,1020 h 40 v 40 H 20 Z" fill="#b30000"/>
       <g font-size="30" font-family="Verdana">
         <text x="70" y="1050">
           <tspan id="tspan905" x="70" y="1050">level5</tspan>
