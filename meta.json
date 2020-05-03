@@ -4,7 +4,7 @@
     "Australia", "Canada", "Czechia", "Germany", "Berlin", "Italy", "Japan", "Korea", "Malaysia",
     "Netherlands", "UK", "England", "London", "US", "New York", "New York CSA", "Scotland", "Spain"
   ],
-  "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York", "Pennsylvania"],
+  "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York", "Pennsylvania", "Scotland"],
   "query_list": {
     "Berlin": ["Germany"],
     "New York CSA": ["US counties", "New York"],
