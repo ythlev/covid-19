@@ -81,7 +81,7 @@ for place in places:
         else:
             date = datetime.date.today()
             print("No date available for Japan; current date used")
-            
+
     else:
         if place in meta["query_list"]:
             queries = meta["query_list"][place]
@@ -163,7 +163,7 @@ for place in places:
                                 i += 1
                             else:
                                 break
-                        file_out.write(row.replace('id="{}"'.format(area), 'style="fill:{}"'.format(meta["colour"][i])))
+                        file_out.write(row.replace('id="{}"'.format(area), 'fill="{}"'.format(meta["colour"][i])))
                         written = True
                         break
                 if written == False:
