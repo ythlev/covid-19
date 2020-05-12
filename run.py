@@ -31,33 +31,24 @@ for place in places:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
 
-    elif place == "UK" or place == "England" or place == "London":
-        date, text = 0, ""
-        import xml.etree.ElementTree as ET
-        with urllib.request.urlopen("https://publicdashacc.blob.core.windows.net/publicdata?restype=container&comp=list") as response:
-            root = ET.fromstring(response.read())
-        for name in root.iter("Name"):
-            if name.text.find("data_") > -1 and int(name.text[5:13]) > date:
-                date = int(name.text[5:13])
-                text = name.text
-        with urllib.request.urlopen("https://c19pub.azureedge.net/" + text) as response:
-            data = json.loads(response.read())
+    elif place in ["UK", "England", "London"]:
+        if "uk_data" not in globals():
+            with urllib.request.urlopen("https://c19downloads.azureedge.net/downloads/data/data_latest.json") as response:
+                global uk_data
+                uk_data = json.loads(response.read())
         if place == "UK":
-            for sub_data in [data["countries"], data["regions"]]:
-                for k, v in sub_data.items():
-                    if k == "E92000001":
-                        unused += 1
-                    else:
-                        main[k]["cases"] = v["totalCases"]["value"]
+            dicts = ["countries", "regions"]
         else:
-            for k, v in data["utlas"].items():
-                if k in main:
-                    main[k]["cases"] = v["totalCases"]["value"]
+            dicts = ["utlas"]
+        for d in dicts:
+            for area in uk_data[d]:
+                if area in main:
+                    main[area]["cases"] = uk_data[d][area]["totalCases"]["value"]
                 else:
                     unused += 1
                     if args["place"] != None or unused < 9:
-                        print(k, v["totalCases"]["value"])
-        date = datetime.datetime.fromisoformat(data["lastUpdatedAt"].rstrip("Z"))
+                        print(area, uk_data[d][area]["totalCases"]["value"])
+        date = datetime.datetime.fromisoformat(uk_data["lastUpdatedAt"].rstrip("Z"))
 
     elif place == "Czechia":
         with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/K373S4uCFR9W1K8ei/records/LATEST?disableRedirect=true") as response:
