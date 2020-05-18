@@ -39,7 +39,7 @@ for place in places:
         if place == "UK":
             dicts = ["countries", "regions"]
         else:
-            dicts = ["utlas"]
+            dicts = ["ltlas"]
         for d in dicts:
             for area in uk_data[d]:
                 if area in main:

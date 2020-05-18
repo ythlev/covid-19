@@ -26,11 +26,11 @@ This script generates SVG maps of number of confirmed cases of COVID-19 per unit
 
 ## UK
 * [Public Health England, NHSX](https://coronavirus.data.gov.uk/)
+* [Office for National Statistics](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2019-boundaries-uk-bgc)
 ### London
 * [Office for National Statistics](https://geoportal.statistics.gov.uk/datasets/counties-and-unitary-authorities-april-2019-boundaries-ew-bgc)
 ### Scotland
 * [Public Health Scotland](https://www.arcgis.com/home/item.html?id=5a93583e03cb4e74a1c8ff2bd8a3e89f)
-* [Office for National Statistics](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2019-boundaries-uk-bgc)
 
 Contains Ordnance Survey data © Crown copyright and database right 2020. Contains National Statistics data © Crown copyright and database right 2020
 
