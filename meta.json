@@ -1,10 +1,10 @@
 {
   "colour": ["#fef0d9","#fdd49e","#fdbb84","#fc8d59","#e34a33","#b30000"],
   "places": [
-    "Australia", "Canada", "Czechia", "Germany", "Berlin", "Italy", "Japan", "Malaysia", "Netherlands",
-    "UK", "England", "London", "US", "New York", "New York CSA", "Scotland", "Spain"
+    "Australia", "Canada", "Czechia", "Germany", "Italy", "Japan", "Malaysia",
+    "Netherlands", "UK", "US", "New York", "New York CSA", "Spain"
   ],
-  "10000": ["Germany", "Berlin", "Netherlands", "England", "London", "New York CSA", "New York", "Pennsylvania", "Scotland"],
+  "10000": ["Germany", "Berlin", "Netherlands","UK", "England", "London", "New York CSA", "New York", "Pennsylvania", "Scotland"],
   "query_list": {
     "Berlin": ["Germany"],
     "New York CSA": ["US counties", "New York"],
@@ -54,6 +54,10 @@
     "Spain":[
       ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
       ["Codigo", "TotalConfirmados", "PAD_2C02"]
+    ],
+    "UK": [
+      ["8", "BuDSiwZVG3gNaQUz", "UK_Covid19_Poly", "0", "FID"],
+      ["AreaCode", "Cases", ""]
     ],
     "US": [
       ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "OBJECTID"],

@@ -31,7 +31,7 @@ for place in places:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
 
-    elif place in ["UK", "England", "London"]:
+    elif place in ["England", "London"]:
         if "uk_data" not in globals():
             with urllib.request.urlopen("https://c19downloads.azureedge.net/downloads/data/data_latest.json") as response:
                 global uk_data
