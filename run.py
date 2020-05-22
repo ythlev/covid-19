@@ -9,20 +9,32 @@ with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding
     meta = json.loads(file.read())
 
 if args["place"] != None:
-    places = [args["place"]]
+    if args["place"] == "UK":
+        places = ["UK-1", "UK-2"]
+    else:
+        places = [args["place"]]
 else:
     places = meta["places"]
 
 with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", encoding = "utf-8-sig") as file:
     population = json.loads(file.read())
 
+main_uk = {}
 for place in places:
     main = {}
-    for area in population[place]:
-        main[area] = {
-            "population": population[place][area],
-            "cases": 0
-        }
+    if place == "UK-1":
+        place = "UK"
+    if place == "UK-2":
+        main = main_uk
+        place = "UK"
+    else:
+        for area in population[place]:
+            main[area] = {
+                "population": population[place][area],
+                "cases": 0
+            }
+        if place == "UK":
+            place = "UK-1"
     unused = 0
     if place == "Taiwan":
         with urllib.request.urlopen("https://od.cdc.gov.tw/eic/Age_County_Gender_19Cov.json") as response:
@@ -31,24 +43,22 @@ for place in places:
             main[row["縣市"]]["cases"] += int(row["確定病例數"])
         date = datetime.date.today()
 
-    elif place in ["England", "London"]:
+    elif place in ["UK-1", "England", "London"]:
         if "uk_data" not in globals():
             with urllib.request.urlopen("https://c19downloads.azureedge.net/downloads/data/data_latest.json") as response:
                 global uk_data
                 uk_data = json.loads(response.read())
-        if place == "UK":
-            dicts = ["countries", "regions"]
-        else:
-            dicts = ["ltlas"]
-        for d in dicts:
-            for area in uk_data[d]:
-                if area in main:
-                    main[area]["cases"] = uk_data[d][area]["totalCases"]["value"]
-                else:
-                    unused += 1
-                    if args["place"] != None or unused < 9:
-                        print(area, uk_data[d][area]["totalCases"]["value"])
+        for area in uk_data["ltlas"]:
+            if area in main:
+                main[area]["cases"] = uk_data["ltlas"][area]["totalCases"]["value"]
+            else:
+                unused += 1
+                if args["place"] != None or unused < 9:
+                    print(area, uk_data["ltlas"][area]["totalCases"]["value"])
         date = datetime.datetime.fromisoformat(uk_data["lastUpdatedAt"].rstrip("Z"))
+        if place == "UK-1":
+            main_uk = main
+            continue
 
     elif place == "Czechia":
         with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/K373S4uCFR9W1K8ei/records/LATEST?disableRedirect=true") as response:

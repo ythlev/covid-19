@@ -2,9 +2,9 @@
   "colour": ["#feebe2","#fbb4b9","#f768a1","#c51b8a","#7a0177"],
   "places": [
     "Australia", "Canada", "Czechia", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
-    "New Zealand", "UK", "England", "London", "Scotland", "US", "New York", "New York CSA", "Spain"
+    "New Zealand", "UK-1", "UK-2", "England", "London", "Scotland", "US", "New York", "New York CSA", "Spain"
   ],
-  "10000": ["Germany", "Berlin", "Netherlands","UK", "England", "London", "New York CSA", "New York", "New Zealand", "Pennsylvania", "Scotland"],
+  "10000": ["Germany", "Berlin", "Netherlands","UK-1", "UK-2", "England", "London", "New York CSA", "New York", "New Zealand", "Pennsylvania", "Scotland"],
   "query_list": {
     "Berlin": ["Germany"],
     "New York CSA": ["US counties", "New York"],
