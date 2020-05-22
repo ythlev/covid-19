@@ -20,17 +20,13 @@
       <text x="-150" y="1876">
         <tspan x="-150" y="1876">level4</tspan>
       </text>
-      <text x="-150" y="1926">
-        <tspan x="-150" y="1926">level5</tspan>
-      </text>
     </g>
     <g id="legend-boxes">
-      <path d="m -200 1646 h 40 v 40 h -40 z" fill="#fef0d9"/>
-      <path d="m -200 1696 h 40 v 40 h -40 z" fill="#fdd49e"/>
-      <path d="m -200 1746 h 40 v 40 h -40 z" fill="#fdbb84"/>
-      <path d="m -200 1796 h 40 v 40 h -40 z" fill="#fc8d59"/>
-      <path d="m -200 1846 h 40 v 40 h -40 z" fill="#e34a33"/>
-      <path d="m -200 1896 h 40 v 40 h -40 z" fill="#b30000"/>
+      <path d="m -200 1646 h 40 v 40 h -40 z" fill="#feebe2"/>
+      <path d="m -200 1696 h 40 v 40 h -40 z" fill="#fbb4b9"/>
+      <path d="m -200 1746 h 40 v 40 h -40 z" fill="#f768a1"/>
+      <path d="m -200 1796 h 40 v 40 h -40 z" fill="#c51b8a"/>
+      <path d="m -200 1846 h 40 v 40 h -40 z" fill="#7a0177"/>
     </g>
   </g>
   <g id="utlas" stroke="#000" stroke-width=".5">
