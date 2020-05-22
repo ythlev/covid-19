@@ -131,13 +131,13 @@ for place in places:
     q = statistics.quantiles(values, n = 100, method = "inclusive")
     step = math.sqrt(statistics.mean(values) - q[0]) / 3
 
-    threshold = [0, 0, 0, 0, 0, 0]
-    for i in range(1, 6):
+    threshold = [0, 0, 0, 0, 0]
+    for i in range(1, 5):
         threshold[i] = math.pow(i * step, 2) + q[0]
 
     with open((pathlib.Path() / "template" / place).with_suffix(".svg"), "r", newline = "", encoding = "utf-8") as file_in:
         with open((pathlib.Path() / "results" / place).with_suffix(".svg"), "w", newline = "", encoding = "utf-8") as file_out:
-            if threshold[5] >= 10000:
+            if threshold[4] >= 10000:
                 num = "{:_.0f}"
             elif threshold[1] >= 10:
                 num = "{:.0f}"
@@ -149,7 +149,7 @@ for place in places:
                 for area in main:
                     if row.find('id="{}"'.format(area)) > -1:
                         i = 0
-                        while i < 5:
+                        while i < 4:
                             if main[area]["pcapita"] >= threshold[i + 1]:
                                 i += 1
                             else:
@@ -161,7 +161,7 @@ for place in places:
                     if row.find('>Date') > -1:
                         file_out.write(row.replace('Date', date.strftime("%F")))
                     elif row.find('>level') > -1:
-                        for i in range(6):
+                        for i in range(5):
                             if row.find('level{}'.format(i)) > -1:
                                 if i == 0:
                                     file_out.write(row.replace('level{}'.format(i), "&lt; " + num.format(threshold[1]).replace("_", "&#8201;")))
