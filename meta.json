@@ -2,13 +2,14 @@
   "colour": ["#feebe2","#fbb4b9","#f768a1","#c51b8a","#7a0177"],
   "places": [
     "Australia", "Canada", "Czechia", "Germany", "Italy", "Japan", "Malaysia",
-    "Netherlands", "US", "New York", "New York CSA", "Spain"
+    "Netherlands", "UK", "England", "London", "Scotland", "US", "New York", "New York CSA", "Spain"
   ],
   "10000": ["Germany", "Berlin", "Netherlands","UK", "England", "London", "New York CSA", "New York", "Pennsylvania", "Scotland"],
   "query_list": {
     "Berlin": ["Germany"],
     "New York CSA": ["US counties", "New York"],
-    "Pennsylvania": ["US counties"]
+    "Pennsylvania": ["US counties"],
+    "Scotland": ["UK"]
   },
   "query": {
     "Australia": [
@@ -46,10 +47,6 @@
     "Poland": [
       ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
       ["jpt_nazwa_", "SUM_Confirmed", "Populacja"]
-    ],
-    "Scotland": [
-      ["5", "fCRrQtNvX2pM5zRG", "Scottish_Covid_Cases_and_Deaths", "1", "OBJECTID"],
-      ["Council", "TotalCases", ""]
     ],
     "Spain":[
       ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
