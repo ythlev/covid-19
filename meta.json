@@ -2,11 +2,11 @@
   "colour": ["#feebe2","#fbb4b9","#f768a1","#c51b8a","#7a0177"],
   "places": [
     "Australia", "Belgium", "Canada", "Czechia", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
-    "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Spain", "Sweden"
+    "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
     "Belgium", "Germany", "Berlin", "Netherlands", "UK", "England", "London", "New York CSA",
-    "New York", "New Zealand", "Pennsylvania", "Scotland", "Sweden"
+    "New York", "New Zealand", "Pennsylvania", "Scotland", "Sweden", "Switzerland"
   ],
   "query_list": {
     "Berlin": ["Germany"],
@@ -66,6 +66,10 @@
     "Sweden":[
       ["5", "fsYDFeRKu1hELJJs", "FOHM_Covid_19_FME_1", "0", "OBJECTID"],
       ["Region", "Fall_per_100000_inv", ""]
+    ],
+    "Switzerland":[
+      ["7", "fhCHtFls7KqrvbDz", "COVID19_CH_FL", "0", "OBJECTID"],
+      ["KANTONSNUM", "POSITIVE_CASE_100K", ""]
     ],
     "UK": [
       ["8", "BuDSiwZVG3gNaQUz", "UK_Covid19_Poly", "0", "FID"],
