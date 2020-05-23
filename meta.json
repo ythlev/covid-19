@@ -1,10 +1,13 @@
 {
   "colour": ["#feebe2","#fbb4b9","#f768a1","#c51b8a","#7a0177"],
   "places": [
-    "Australia", "Canada", "Czechia", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
+    "Australia", "Belgium", "Canada", "Czechia", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
     "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Spain", "Sweden"
   ],
-  "10000": ["Germany", "Berlin", "Netherlands", "UK", "England", "London", "New York CSA", "New York", "New Zealand", "Pennsylvania", "Scotland", "Sweden"],
+  "10000": [
+    "Belgium", "Germany", "Berlin", "Netherlands", "UK", "England", "London", "New York CSA",
+    "New York", "New Zealand", "Pennsylvania", "Scotland", "Sweden"
+  ],
   "query_list": {
     "Berlin": ["Germany"],
     "New York CSA": ["US counties", "New York"],
@@ -15,6 +18,10 @@
     "Australia": [
       ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0", "OBJECTID"],
       ["ISO_SUB", "Cases", ""]
+    ],
+    "Belgium": [
+      ["", "1WXsSdZFzziTTcic", "cases_may05", "0", "OBJECTID"],
+      ["NIS5", "Cases_per_1000", ""]
     ],
     "Canada": [
       ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0", "OBJECTID"],
