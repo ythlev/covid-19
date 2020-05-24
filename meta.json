@@ -5,11 +5,11 @@
   },
   "places": [
     "Australia", "Belgium", "Canada", "Czechia", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
-    "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Spain", "Sweden", "Switzerland"
+    "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
     "Belgium", "Germany", "Berlin", "Netherlands", "UK", "England", "London", "New York CSA",
-    "New York", "New Zealand", "Pennsylvania", "Scotland", "Sweden", "Switzerland"
+    "New York", "New Zealand", "Pennsylvania", "Romania", "Scotland", "Sweden", "Switzerland"
   ],
   "query_list": {
     "Berlin": ["Germany"],
@@ -61,6 +61,10 @@
     "Poland": [
       ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0"],
       ["jpt_nazwa_", "SUM_Confirmed", "Populacja"]
+    ],
+    "Romania": [
+      ["", "IjJbzDQF4hOiNl87", "Cazuri_COVID19_la_nivel_de_județ_(la_data_curentă)", "0"],
+      ["SIRUTA_judet", "nr_cazuri_confirmate", "pop_2020"]
     ],
     "Spain":[
       ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0"],
