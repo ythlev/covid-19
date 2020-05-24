@@ -100,8 +100,12 @@ for place in places:
                 with urllib.request.urlopen(url1) as response:
                     date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
                     date = datetime.datetime.fromtimestamp(date, tz = datetime.timezone.utc)
-                url2 = url + "query?where={}%3E0&outFields={},{},{}&returnGeometry=false&returnExceededLimitFeatures=true&f=pjson".format(
-                    meta["query"][query][0][4],
+                if place == "France":
+                    where = "Jour%3D%27{}%2F{}%2F20{}%27".format(date.strftime("%d"), date.strftime("%m"), date.strftime("%y"))
+                else:
+                    where = urllib.parse.quote(meta["query"][query][1][1]) + "%3E-1"
+                url2 = url + "query?where={}&outFields={},{},{}&returnGeometry=false&returnExceededLimitFeatures=true&f=pjson".format(
+                    where,
                     meta["query"][query][1][0],
                     urllib.parse.quote(meta["query"][query][1][1]),
                     meta["query"][query][1][2]
@@ -164,7 +168,10 @@ for place in places:
                                 i += 1
                             else:
                                 break
-                        file_out.write(row.replace('id="{}"'.format(area), 'fill="{}"'.format(meta["colour"][i])))
+                        if place == "France":
+                            file_out.write(row.replace('id="{}"'.format(area), 'fill="{}"'.format(meta["colour"]["deaths"][i])))
+                        else:
+                            file_out.write(row.replace('id="{}"'.format(area), 'fill="{}"'.format(meta["colour"]["cases"][i])))
                         written = True
                         break
                 if written == False:

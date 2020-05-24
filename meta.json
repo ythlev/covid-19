@@ -1,5 +1,8 @@
 {
-  "colour": ["#feebe2","#fbb4b9","#f768a1","#c51b8a","#7a0177"],
+  "colour": {
+    "cases": ["#feebe2","#fbb4b9","#f768a1","#c51b8a","#7a0177"],
+    "deaths": ["#ffffcc","#c2e699","#78c679","#31a354","#006837"]
+  },
   "places": [
     "Australia", "Belgium", "Canada", "Czechia", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
     "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Spain", "Sweden", "Switzerland"
@@ -16,75 +19,75 @@
   },
   "query": {
     "Australia": [
-      ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0", "OBJECTID"],
+      ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0"],
       ["ISO_SUB", "Cases", ""]
     ],
     "Belgium": [
-      ["", "1WXsSdZFzziTTcic", "cases_may05", "0", "OBJECTID"],
+      ["", "1WXsSdZFzziTTcic", "cases_may05", "0"],
       ["NIS5", "Cases_per_1000", ""]
     ],
     "Canada": [
-      ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0", "OBJECTID"],
+      ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0"],
       ["HR_UID", "CaseCount", "TotalPop2019"]
     ],
     "France": [
-      ["1", "5PzxEwuu4GtMhqQ6", "Regions_DT_Project_Vue", "0", "OBJECTID"],
-      ["code_insee", "nb_cas", ""]
+      ["1", "5PzxEwuu4GtMhqQ6", "Synthese_Covid19_France", "0"],
+      ["CODE_DEPT", "Deces_T", "Pop2020"]
     ],
     "Germany": [
-      ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0", "OBJECTID"],
+      ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0"],
       ["RS", "cases_per_100k", ""]
     ],
     "Italy": [
-      ["6", "L1SotImj1AAZY1eK", "dpc_province_covid19_new", "0", "OBJECTID"],
+      ["6", "L1SotImj1AAZY1eK", "dpc_province_covid19_new", "0"],
       ["sigla_provincia", "totale_casi", ""]
     ],
     "Korea": [
-      ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0", "OBJECTID"],
+      ["2", "RiHDI9SnFmD3Itzs", "시도별_코로나", "0"],
       ["CTPRVN_CD", "발생자수", ""]
     ],
     "Malaysia": [
-      ["6", "MpOjf90wsc96wTq1", "Case", "0", "OBJECTID"],
+      ["6", "MpOjf90wsc96wTq1", "Case", "0"],
       ["State", "Confirmed", ""]
     ],
     "Netherlands": [
-      ["", "nSZVuSZjHpEZZbRo", "Coronavirus_RIVM_vlakken_actueel", "0", "OBJECTID"],
+      ["", "nSZVuSZjHpEZZbRo", "Coronavirus_RIVM_vlakken_actueel", "0"],
       ["Gemeentecode", "Meldingen_100000", ""]
     ],
     "New Zealand": [
-      ["", "X6pbMkffRhVOzZha", "DHB_NZ", "0", "FID"],
+      ["", "X6pbMkffRhVOzZha", "DHB_NZ", "0"],
       ["DHB2015_Co", "TotalCases", "Population"]
     ],
     "Poland": [
-      ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0", "OBJECTID"],
+      ["1", "YmCK8KfESHdxUQgm", "wojewodztwa_corona_wskaznik_widok", "0"],
       ["jpt_nazwa_", "SUM_Confirmed", "Populacja"]
     ],
     "Spain":[
-      ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0", "OBJECTID_12"],
+      ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0"],
       ["Codigo", "TotalConfirmados", "PAD_2C02"]
     ],
     "Sweden":[
-      ["5", "fsYDFeRKu1hELJJs", "FOHM_Covid_19_FME_1", "0", "OBJECTID"],
+      ["5", "fsYDFeRKu1hELJJs", "FOHM_Covid_19_FME_1", "0"],
       ["Region", "Fall_per_100000_inv", ""]
     ],
     "Switzerland":[
-      ["7", "fhCHtFls7KqrvbDz", "COVID19_CH_FL", "0", "OBJECTID"],
+      ["7", "fhCHtFls7KqrvbDz", "COVID19_CH_FL", "0"],
       ["KANTONSNUM", "POSITIVE_CASE_100K", ""]
     ],
     "UK": [
-      ["8", "BuDSiwZVG3gNaQUz", "UK_Covid19_Poly", "0", "FID"],
+      ["8", "BuDSiwZVG3gNaQUz", "UK_Covid19_Poly", "0"],
       ["AreaCode", "Cases", ""]
     ],
     "US": [
-      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1", "OBJECTID"],
+      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1"],
       ["Province_State", "Confirmed", ""]
     ],
     "US counties": [
-      ["1", "0MSEUqKaxRlEPj5g", "ncov_cases_US", "0", "OBJECTID"],
+      ["1", "0MSEUqKaxRlEPj5g", "ncov_cases_US", "0"],
       ["FIPS", "Confirmed", ""]
     ],
     "New York": [
-      ["6", "g0aLRCsb9E6XXVpC", "ny_counties_coronavirus", "0", "FID"],
+      ["6", "g0aLRCsb9E6XXVpC", "ny_counties_coronavirus", "0"],
       ["NAME", "COVID_CASE", "POP2020"]
     ]
   }
