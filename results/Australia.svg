@@ -3,7 +3,7 @@
   <g id="Legend" transform="matrix(0.90464025,0,0,0.90464025,1244.9524,-650.63775)">
     <g id="Text" font-size="30" font-family="Verdana" fill="#000">
       <text x="-200" y="1626">
-        <tspan x="-200" y="1626">2020-05-22</tspan>
+        <tspan x="-200" y="1626">2020-05-26</tspan>
       </text>
       <text x="-150" y="1676">
         <tspan x="-150" y="1676">&lt; 143</tspan>
@@ -18,7 +18,7 @@
         <tspan x="-150" y="1826">≥ 261</tspan>
       </text>
       <text x="-150" y="1876">
-        <tspan x="-150" y="1876">≥ 364</tspan>
+        <tspan x="-150" y="1876">≥ 365</tspan>
       </text>
     </g>
     <g id="legend-boxes">
