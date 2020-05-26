@@ -64,7 +64,7 @@
     ],
     "Romania": [
       ["", "IjJbzDQF4hOiNl87", "Cazuri_COVID19_la_nivel_de_județ_(la_data_curentă)", "0"],
-      ["SIRUTA_judet", "nr_cazuri_confirmate", "pop_2020"]
+      ["SIRUTA_judet", "nr_cazuri", "pop_2020"]
     ],
     "Spain":[
       ["", "f2vDwAxkYCKm4Ckx", "ComAutonomaPoblacion_ParaDescarga", "0"],
