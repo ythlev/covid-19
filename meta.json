@@ -4,7 +4,7 @@
     "deaths": ["#ffffcc","#c2e699","#78c679","#31a354","#006837"]
   },
   "places": [
-    "Australia", "Belgium", "Canada", "Czechia", "ESE Asia", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
+    "Australia", "Belgium", "Canada", "Czechia", "E Asia", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
     "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
@@ -30,7 +30,7 @@
       ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0"],
       ["HR_UID", "CaseCount", "TotalPop2019"]
     ],
-    "ESE Asia": [
+    "E Asia": [
       ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "2"],
       ["Country_Region", "Confirmed", ""]
     ],
