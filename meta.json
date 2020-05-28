@@ -30,6 +30,10 @@
       ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0"],
       ["HR_UID", "CaseCount", "TotalPop2019"]
     ],
+    "ESE Asia": [
+      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "2"],
+      ["Country_Region", "Confirmed", ""]
+    ],
     "France": [
       ["1", "5PzxEwuu4GtMhqQ6", "Synthese_Covid19_France", "0"],
       ["CODE_DEPT", "Deces_T", "Pop2020"]

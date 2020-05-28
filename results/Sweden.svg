@@ -6,22 +6,22 @@
   <g id="legend" transform="matrix(0.59609265,0,0,0.59609265,340.30871,-555.58854)">
     <g id="Text" font-size="30" font-family="Verdana" fill="#000">
       <text x="-200" y="1626">
-        <tspan x="-200" y="1626">2020-05-25</tspan>
+        <tspan x="-200" y="1626">2020-05-27</tspan>
       </text>
       <text x="-150" y="1676">
-        <tspan x="-150" y="1676">&lt; 12</tspan>
+        <tspan x="-150" y="1676">&lt; 13</tspan>
       </text>
       <text x="-150" y="1726">
-        <tspan x="-150" y="1726">≥ 12</tspan>
+        <tspan x="-150" y="1726">≥ 13</tspan>
       </text>
       <text x="-150" y="1776">
-        <tspan x="-150" y="1776">≥ 19</tspan>
+        <tspan x="-150" y="1776">≥ 20</tspan>
       </text>
       <text x="-150" y="1826">
-        <tspan x="-150" y="1826">≥ 31</tspan>
+        <tspan x="-150" y="1826">≥ 32</tspan>
       </text>
       <text x="-150" y="1876">
-        <tspan x="-150" y="1876">≥ 47</tspan>
+        <tspan x="-150" y="1876">≥ 48</tspan>
       </text>
     </g>
     <g id="legend-boxes">

@@ -134,16 +134,19 @@ for place in places:
     else:
         unit = 1000000
 
+    cases, pop = 0, 0
     values = []
     for area in main:
         if main[area]["population"] > 0:
             main[area]["pcapita"] = main[area]["cases"] / main[area]["population"] * unit
+            cases += main[area]["cases"]
+            pop += main[area]["population"]
             values.append(main[area]["pcapita"])
         else:
             print("Population for", area, "not found")
 
     q = statistics.quantiles(values, n = 100, method = "inclusive")
-    step = math.sqrt(statistics.mean(values) - q[0]) / 3
+    step = math.sqrt(cases / pop * unit - q[0]) / 3
 
     threshold = [0, 0, 0, 0, 0]
     for i in range(1, 5):
@@ -187,7 +190,4 @@ for place in places:
                     else:
                         file_out.write(row)
 
-    cases = []
-    for area in main:
-        cases.append(main[area]["cases"])
-    print("{}: {} cases total in {} areas; {} figures unused".format(place, sum(cases), len(cases), unused))
+    print("{}: {} cases total in {} areas; {} figures unused".format(place, cases, len(values), unused))

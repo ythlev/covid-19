@@ -703,6 +703,26 @@
     "Zlínský kraj": 582710,
     "Moravskoslezský kraj": 1201436
   },
+  "ESE Asia": {
+    "Vietnam": 97338579,
+    "Thailand": 69799978,
+    "Taiwan*": 23816775,
+    "Korea, South": 51269185,
+    "Singapore": 5850342,
+    "Philippines": 109581078,
+    "Korea, North": 25778816,
+    "Burma": 54409800,
+    "Mongolia": 3278290,
+    "Maldives": 540544,
+    "Malaysia": 32365999,
+    "Laos": 7275560,
+    "Japan": 126476461,
+    "Indonesia": 273523615,
+    "Timor-Leste": 1318445,
+    "China": 1439323776,
+    "Cambodia": 16718965,
+    "Brunei": 437479
+  },
   "France": {
     "39": 0,
     "42": 0,
