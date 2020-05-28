@@ -138,6 +138,8 @@ for place in places:
     values = []
     for area in main:
         if main[area]["population"] > 0:
+            if not main[area]["cases"] > 0:
+                print(area, 0)
             main[area]["pcapita"] = main[area]["cases"] / main[area]["population"] * unit
             cases += main[area]["cases"]
             pop += main[area]["population"]
