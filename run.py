@@ -3,7 +3,7 @@ import argparse, pathlib, json, csv, io, urllib.request, urllib.parse, math, sta
 
 parser = argparse.ArgumentParser(description = "This script generates svg maps for the COVID-19 outbreak for select places")
 parser.add_argument("-p", "--place", help = "Name of place to generate; by default, maps for select places are generated")
-parser.add_argument("-u", "--url", help = "Print url")
+parser.add_argument("-u", "--url", action = "store_const", const = True, help = "Print url")
 args = vars(parser.parse_args())
 
 with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
@@ -98,6 +98,8 @@ for place in places:
                     urllib.parse.quote(meta["query"][query][0][2]),
                     meta["query"][query][0][3],
                 )
+                if args["url"]:
+                    print("  " + url)
                 url1 = url + "?f=pjson"
                 with urllib.request.urlopen(url1) as response:
                     date = json.loads(response.read())["editingInfo"]["lastEditDate"] / 1000
@@ -112,8 +114,6 @@ for place in places:
                     urllib.parse.quote(meta["query"][query][1][1]),
                     meta["query"][query][1][2]
                 )
-                if args["url"]:
-                    print("  " + url2)
                 with urllib.request.urlopen(url2) as response:
                     if place == "US":
                         start = 255

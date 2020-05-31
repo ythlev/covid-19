@@ -5,7 +5,7 @@
   },
   "places": [
     "Australia", "Belgium", "Brazil", "Canada", "Czechia", "Europe", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
-    "New Zealand", "UK-1", "UK-2", "US", "US counties", "New York", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
+    "New Zealand", "UK-1", "UK-2", "US", "US counties", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
     "Belgium", "Germany", "Berlin", "Netherlands", "UK", "England", "London", "US counties", "New York CSA",
@@ -27,11 +27,11 @@
     ],
     "Belgium": [
       ["", "1WXsSdZFzziTTcic", "cases_may05", "0"],
-      ["NIS5", "Cases_per_1000", ""]
+      ["NIS5", "CASES", "POP"]
     ],
     "Brazil": [
       ["", "lqRTrQp2HrfnJt8U", "COVID_19_VIEW", "0"],
-      ["uf", "casos_100k", ""]
+      ["uf", "casos_secr", "pop_2019"]
     ],
     "Canada": [
       ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0"],
@@ -47,11 +47,11 @@
     ],
     "Germany": [
       ["7", "mOBPykOjAyBO2ZKk", "RKI_Landkreisdaten", "0"],
-      ["RS", "cases_per_100k", ""]
+      ["RS", "cases", "EWZ"]
     ],
     "India": [
       ["5", "IUA22iTk8NmK3OF2", "Covid_data_state_wise", "0"],
-      ["State", "cases_lakh", ""]
+      ["State", "Confirmed", "population_lakh"]
     ],
     "Italy": [
       ["6", "L1SotImj1AAZY1eK", "dpc_province_covid19_new", "0"],
@@ -91,7 +91,7 @@
     ],
     "Switzerland":[
       ["7", "fhCHtFls7KqrvbDz", "COVID19_CH_FL", "0"],
-      ["KANTONSNUM", "POSITIVE_CASE_100K", ""]
+      ["KANTONSNUM", "FAELLE", "EINWOHNERZ"]
     ],
     "UK": [
       ["8", "BuDSiwZVG3gNaQUz", "UK_Covid19_Poly", "0"],
