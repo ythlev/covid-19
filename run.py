@@ -21,6 +21,7 @@ with open((pathlib.Path() / "population").with_suffix(".json"), newline = "", en
 
 main_uk = {}
 for place in places:
+    print(place)
     main = {}
     if place == "UK-1":
         place = "UK"
@@ -54,7 +55,7 @@ for place in places:
             else:
                 unused += 1
                 if args["place"] != None or unused < 9:
-                    print(area, uk_data["ltlas"][area]["totalCases"]["value"])
+                    print("  Area '{}' in query not found in list; cases:".format(area), uk_data["ltlas"][area]["totalCases"]["value"])
         date = datetime.datetime.fromisoformat(uk_data["lastUpdatedAt"].rstrip("Z"))
         if place == "UK-1":
             main_uk = main
@@ -69,7 +70,7 @@ for place in places:
             else:
                 unused += 1
                 if args["place"] != None or unused < 9:
-                    print(row["name"])
+                    print(  "Area '{}' in query not found in list".format(row["name"]))
         date = datetime.datetime.fromisoformat(data["lastUpdatedAtSource"].rstrip("Z"))
 
     elif place == "Japan":
@@ -81,7 +82,7 @@ for place in places:
             date = datetime.datetime.fromisoformat(data["lastUpdate"])
         else:
             date = datetime.date.today()
-            print("No date available for Japan; current date used")
+            print("  No date available for Japan; current date used")
 
     else:
         if place in meta["query_list"]:
@@ -124,9 +125,9 @@ for place in places:
                         elif id not in [None, "None", "NA"] and item["attributes"][meta["query"][query][1][1]] != None:
                             unused += 1
                             if args["place"] != None or unused < 9:
-                                print(id, item["attributes"][meta["query"][query][1][1]])
+                                print("  Area '{}' in query not found in list; cases:".format(id), item["attributes"][meta["query"][query][1][1]])
         except:
-            print("Error fetching data for", place)
+            print("  Error fetching data for", place)
             continue
 
     if place in meta["10000"]:
@@ -137,15 +138,18 @@ for place in places:
     cases, pop = 0, 0
     values = []
     for area in main:
+        no_cases = 0
         if main[area]["population"] > 0:
             if not main[area]["cases"] > 0:
-                print(area, 0)
+                no_cases += 1
+                if args["place"] != None or no_cases < 9:
+                    print("  Area '{}' in list has 0 cases".format(area))
             main[area]["pcapita"] = main[area]["cases"] / main[area]["population"] * unit
             cases += main[area]["cases"]
             pop += main[area]["population"]
             values.append(main[area]["pcapita"])
         else:
-            print("Population for", area, "not found")
+            print("  Population for '{}' in list is 0".format(area))
 
     q = statistics.quantiles(values, n = 100, method = "inclusive")
     step = math.sqrt(cases / pop * unit - q[0]) / 3
@@ -192,4 +196,4 @@ for place in places:
                     else:
                         file_out.write(row)
 
-    print("{}: {} cases total in {} areas; {} figures unused".format(place, cases, len(values), unused))
+    print("  {} cases total in {} areas; {} figures unused".format(cases, len(values), unused))
