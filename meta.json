@@ -4,7 +4,7 @@
     "deaths": ["#ffffcc","#c2e699","#78c679","#31a354","#006837"]
   },
   "places": [
-    "Australia", "Belgium", "Canada", "Czechia", "Europe", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
+    "Australia", "Belgium", "Brazil", "Canada", "Czechia", "Europe", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
     "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
@@ -27,6 +27,10 @@
     "Belgium": [
       ["", "1WXsSdZFzziTTcic", "cases_may05", "0"],
       ["NIS5", "Cases_per_1000", ""]
+    ],
+    "Brazil": [
+      ["", "lqRTrQp2HrfnJt8U", "COVID_19_VIEW", "0"],
+      ["uf", "casos_100k", ""]
     ],
     "Canada": [
       ["9", "pJENMVYPQqZZe20v", "NewHybridRegionalHeathBoundaries", "0"],

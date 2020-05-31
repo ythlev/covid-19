@@ -70,7 +70,7 @@ for place in places:
             else:
                 unused += 1
                 if args["place"] != None or unused < 9:
-                    print(  "Area '{}' in query not found in list".format(row["name"]))
+                    print("  Area '{}' in query not found in list".format(row["name"]))
         date = datetime.datetime.fromisoformat(data["lastUpdatedAtSource"].rstrip("Z"))
 
     elif place == "Japan":
