@@ -8,13 +8,14 @@
     "New Zealand", "UK-1", "UK-2", "US", "New York", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
-    "Belgium", "Germany", "Berlin", "Netherlands", "UK", "England", "London", "New York CSA",
+    "Belgium", "Germany", "Berlin", "Netherlands", "UK", "England", "London", "US counties", "New York CSA",
     "New York", "New Zealand", "Pennsylvania", "Romania", "Scotland", "Sweden", "Switzerland"
   ],
   "query_list": {
     "Berlin": ["Germany"],
     "E Asia": ["Countries"],
     "Europe": ["Countries"],
+    "US counties": ["US counties", "New York"],
     "New York CSA": ["US counties", "New York"],
     "Pennsylvania": ["US counties"],
     "Scotland": ["UK"]
