@@ -3,12 +3,13 @@ import argparse, pathlib, json, csv, io, urllib.request, urllib.parse, math, sta
 
 parser = argparse.ArgumentParser(description = "This script generates svg maps for the COVID-19 outbreak for select places")
 parser.add_argument("-p", "--place", help = "Name of place to generate; by default, maps for select places are generated")
+parser.add_argument("-u", "--url", help = "Print url")
 args = vars(parser.parse_args())
 
 with open((pathlib.Path() / "meta").with_suffix(".json"), newline = "", encoding = "utf-8") as file:
     meta = json.loads(file.read())
 
-if args["place"] != None:
+if args["place"]:
     if args["place"] == "UK":
         places = ["UK-1", "UK-2"]
     else:
@@ -54,7 +55,7 @@ for place in places:
                 main[area]["cases"] = uk_data["ltlas"][area]["totalCases"]["value"]
             else:
                 unused += 1
-                if args["place"] != None or unused < 9:
+                if args["place"] or unused < 9:
                     print("  Area '{}' in query not found in list; cases:".format(area), uk_data["ltlas"][area]["totalCases"]["value"])
         date = datetime.datetime.fromisoformat(uk_data["lastUpdatedAt"].rstrip("Z"))
         if place == "UK-1":
@@ -69,7 +70,7 @@ for place in places:
                 main[row["name"]]["cases"] = row["value"]
             else:
                 unused += 1
-                if args["place"] != None or unused < 9:
+                if args["place"] or unused < 9:
                     print("  Area '{}' in query not found in list".format(row["name"]))
         date = datetime.datetime.fromisoformat(data["lastUpdatedAtSource"].rstrip("Z"))
 
@@ -111,7 +112,8 @@ for place in places:
                     urllib.parse.quote(meta["query"][query][1][1]),
                     meta["query"][query][1][2]
                 )
-                print("  " + url2)
+                if args["url"]:
+                    print("  " + url2)
                 with urllib.request.urlopen(url2) as response:
                     if place == "US":
                         start = 255
@@ -123,9 +125,9 @@ for place in places:
                             main[id]["cases"] = float(item["attributes"][meta["query"][query][1][1]])
                             if meta["query"][query][1][2] != "":
                                 main[id]["population"] = int(item["attributes"][meta["query"][query][1][2]])
-                        elif id not in [None, "None", "NA"] and item["attributes"][meta["query"][query][1][1]] != None:
+                        elif id not in [None, "None", "NA"] and item["attributes"][meta["query"][query][1][1]]:
                             unused += 1
-                            if args["place"] != None or unused < 9:
+                            if args["place"] or unused < 9:
                                 print("  Area '{}' in query not found in list; cases:".format(id), item["attributes"][meta["query"][query][1][1]])
         except:
             print("  Error fetching data for", place)
@@ -143,7 +145,7 @@ for place in places:
         if main[area]["population"] > 0:
             if not main[area]["cases"] > 0:
                 no_cases += 1
-                if args["place"] != None or no_cases < 9:
+                if args["place"] or no_cases < 9:
                     print("  Area '{}' in list has 0 cases".format(area))
             main[area]["pcapita"] = main[area]["cases"] / main[area]["population"] * unit
             cases += main[area]["cases"]
