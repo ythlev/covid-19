@@ -122,7 +122,8 @@ for place in places:
                     for item in json.loads(response.read())["features"][start:]:
                         id = str(item["attributes"][meta["query"][query][1][0]]).lstrip("0")
                         if id in main:
-                            main[id]["cases"] = float(item["attributes"][meta["query"][query][1][1]])
+                            if main[id]["cases"] == 0:
+                                main[id]["cases"] = float(item["attributes"][meta["query"][query][1][1]])
                             if meta["query"][query][1][2] != "":
                                 main[id]["population"] = int(item["attributes"][meta["query"][query][1][2]])
                         elif id not in [None, "None", "NA"] and item["attributes"][meta["query"][query][1][1]]:
