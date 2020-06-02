@@ -4,7 +4,7 @@
     "deaths": ["#ffffcc","#c2e699","#78c679","#31a354","#006837"]
   },
   "places": [
-    "Australia", "Belgium", "Brazil", "Canada", "Czechia", "Europe", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
+    "Australia", "Belgium", "Brazil", "Canada", "Czechia", "Europe", "Europe deaths", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
     "New Zealand", "UK-1", "UK-2", "US states", "US counties", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
@@ -15,6 +15,7 @@
     "Berlin": ["Germany"],
     "E Asia": ["JHU countries"],
     "Europe": ["JHU territories", "JHU countries"],
+    "Europe deaths": ["JHU territory deaths", "JHU country deaths"],
     "US counties": ["US counties", "New York"],
     "New York CSA": ["US counties", "New York"],
     "Pennsylvania": ["US counties"],
@@ -22,13 +23,21 @@
     "US states": ["JHU territories"]
   },
   "query": {
+    "JHU territories": [
+      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1"],
+      ["Province_State", "Confirmed", ""]
+    ],
     "JHU countries": [
       ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "2"],
       ["Country_Region", "Confirmed", ""]
     ],
-    "JHU territories": [
-      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "1"],
-      ["Province_State", "Confirmed", ""]
+    "JHU territory deaths": [
+      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "0"],
+      ["Province_State", "Deaths", ""]
+    ],
+    "JHU country deaths": [
+      ["1", "0MSEUqKaxRlEPj5g", "Coronavirus_2019_nCoV_Cases", "2"],
+      ["Country_Region", "Deaths", ""]
     ],
     "Australia": [
       ["1", "vHnIGBHHqDR6y0CR", "Current_Cases_by_State", "0"],

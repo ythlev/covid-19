@@ -181,7 +181,7 @@ for place in places:
                                 i += 1
                             else:
                                 break
-                        if place == "France":
+                        if place in ["France", "Europe deaths"]:
                             file_out.write(row.replace('id="{}"'.format(area), 'fill="{}"'.format(meta["colour"]["deaths"][i])))
                         else:
                             file_out.write(row.replace('id="{}"'.format(area), 'fill="{}"'.format(meta["colour"]["cases"][i])))
