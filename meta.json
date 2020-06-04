@@ -4,7 +4,7 @@
     "deaths": ["#ffffcc","#c2e699","#78c679","#31a354","#006837"]
   },
   "places": [
-    "Australia", "Belgium", "Brazil", "Canada", "Czechia", "Europe", "Europe deaths", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
+    "Asia", "Asia deaths", "Australia", "Belgium", "Brazil", "Canada", "Czechia", "Europe", "Europe deaths", "France", "Germany", "Italy", "Japan", "Malaysia", "Netherlands",
     "New Zealand", "UK-1", "UK-2", "US counties", "New York CSA", "Romania", "Spain", "Sweden", "Switzerland"
   ],
   "10000": [
@@ -12,6 +12,8 @@
     "New York", "New Zealand", "Pennsylvania", "Romania", "Scotland", "Sweden", "Switzerland"
   ],
   "query_list": {
+    "Asia" : ["JHU territories", "JHU countries"],
+    "Asia deaths" : ["JHU territory deaths", "JHU country deaths"],
     "Berlin": ["Germany"],
     "E Asia": ["JHU countries"],
     "Europe": ["JHU territories", "JHU countries"],
