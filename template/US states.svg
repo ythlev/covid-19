@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593">
-<g id="g1003" transform="matrix(0.71910781,0,0,0.71910781,961.3733,-779.2058)">
+<g id="g1003" transform="matrix(0.69319107,0,0,0.69319107,952.5491,-749.5153)">
   <g id="Text" font-size="30" font-family="Verdana" fill="#000">
     <text x="-200" y="1626">
       <tspan x="-200" y="1626">Date</tspan>
@@ -19,6 +19,9 @@
     </text>
     <text x="-150" y="1876">
       <tspan x="-150" y="1876">level4</tspan>
+    </text>
+    <text x="-200" y="1926">
+      <tspan x="-200" y="1926">/ 100&#8201;000</tspan>
     </text>
   </g>
   <g id="legend-boxes">

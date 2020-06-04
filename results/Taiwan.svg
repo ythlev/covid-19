@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2055">
-  <g id="legend" transform="matrix(1.9493338,0,0,1.9493338,431.5034,-1655.4752)">
+  <g id="legend" transform="matrix(1.9493338,0,0,1.9493338,407.26991,-1720.9056)">
     <g id="Text" font-size="30" font-family="Verdana" fill="#000">
       <text x="-200" y="1626">
-        <tspan x="-200" y="1626">2020-06-01</tspan>
+        <tspan x="-200" y="1626">2020-06-04</tspan>
       </text>
       <text x="-150" y="1676">
-        <tspan x="-150" y="1676">&lt; 2.08</tspan>
+        <tspan x="-150" y="1676">&lt; 0.21</tspan>
       </text>
       <text x="-150" y="1726">
-        <tspan x="-150" y="1726">≥ 2.08</tspan>
+        <tspan x="-150" y="1726">≥ 0.21</tspan>
       </text>
       <text x="-150" y="1776">
-        <tspan x="-150" y="1776">≥ 8.33</tspan>
+        <tspan x="-150" y="1776">≥ 0.83</tspan>
       </text>
       <text x="-150" y="1826">
-        <tspan x="-150" y="1826">≥ 18.74</tspan>
+        <tspan x="-150" y="1826">≥ 1.88</tspan>
       </text>
       <text x="-150" y="1876">
-        <tspan x="-150" y="1876">≥ 33.31</tspan>
+        <tspan x="-150" y="1876">≥ 3.34</tspan>
+      </text>
+      <text x="-200" y="1926">
+        <tspan x="-192.5" y="1926">&#129485;</tspan>
+      </text>
+      <text x="-150" y="1926">
+        <tspan x="-150" y="1926">100&#8201;000</tspan>
       </text>
     </g>
     <g id="legend-boxes">

@@ -5,7 +5,7 @@
       <path id="rect930" fill="none" stroke="#000" d="M1 453.437H1441V1499.5610000000001H1z"/>
     </clipPath>
   </defs>
-  <g transform="matrix(1.10691 0 0 1.10691 228.312 -1046.852)" id="legend">
+  <g transform="matrix(1.0040805,0,0,1.0040805,205.26969,-892.72867)" id="legend">
     <g fill="#000" font-family="Verdana" font-size="30" id="Text">
       <text id="text4" y="1626" x="-200">
         <tspan id="tspan2" y="1626" x="-200">Date</tspan>
@@ -24,6 +24,12 @@
       </text>
       <text id="text24" y="1876" x="-150">
         <tspan id="tspan22" y="1876" x="-150">level4</tspan>
+      </text>
+      <text x="-200" y="1926">
+        <tspan x="-192.5" y="1926">&#129485;</tspan>
+      </text>
+      <text x="-150" y="1926">
+        <tspan x="-150" y="1926">100&#8201;000</tspan>
       </text>
     </g>
     <g id="legend-boxes">

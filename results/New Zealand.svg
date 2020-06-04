@@ -6,19 +6,22 @@
         <tspan x="-200" y="1626">2020-06-02</tspan>
       </text>
       <text x="-150" y="1676">
-        <tspan x="-150" y="1676">&lt; 1.14</tspan>
+        <tspan x="-150" y="1676">&lt; 11</tspan>
       </text>
       <text x="-150" y="1726">
-        <tspan x="-150" y="1726">≥ 1.14</tspan>
+        <tspan x="-150" y="1726">≥ 11</tspan>
       </text>
       <text x="-150" y="1776">
-        <tspan x="-150" y="1776">≥ 1.85</tspan>
+        <tspan x="-150" y="1776">≥ 18</tspan>
       </text>
       <text x="-150" y="1826">
-        <tspan x="-150" y="1826">≥ 3.03</tspan>
+        <tspan x="-150" y="1826">≥ 30</tspan>
       </text>
       <text x="-150" y="1876">
-        <tspan x="-150" y="1876">≥ 4.68</tspan>
+        <tspan x="-150" y="1876">≥ 47</tspan>
+      </text>
+      <text x="-200" y="1926">
+        <tspan x="-200" y="1926">/ 100&#8201;000</tspan>
       </text>
     </g>
     <g id="legend-boxes">

@@ -134,11 +134,7 @@ for place in places:
             print("  Error fetching data for", place)
             continue
 
-    if place in meta["10000"]:
-        unit = 10000
-    else:
-        unit = 1000000
-
+    unit = 100000
     cases, pop = 0, 0
     values = []
     for area in main:

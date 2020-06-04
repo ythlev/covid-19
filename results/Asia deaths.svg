@@ -5,25 +5,28 @@
       <path id="rect930" fill="none" stroke="#000" d="M1 453.437H1441V1499.5610000000001H1z"/>
     </clipPath>
   </defs>
-  <g transform="matrix(1.10691 0 0 1.10691 228.312 -1046.852)" id="legend">
+  <g transform="matrix(1.0040805,0,0,1.0040805,205.26969,-892.72867)" id="legend">
     <g fill="#000" font-family="Verdana" font-size="30" id="Text">
       <text id="text4" y="1626" x="-200">
         <tspan id="tspan2" y="1626" x="-200">2020-06-04</tspan>
       </text>
       <text id="text8" y="1676" x="-150">
-        <tspan id="tspan6" y="1676" x="-150">&lt; 0.94</tspan>
+        <tspan id="tspan6" y="1676" x="-150">&lt; 0.09</tspan>
       </text>
       <text id="text12" y="1726" x="-150">
-        <tspan id="tspan10" y="1726" x="-150">≥ 0.94</tspan>
+        <tspan id="tspan10" y="1726" x="-150">≥ 0.09</tspan>
       </text>
       <text id="text16" y="1776" x="-150">
-        <tspan id="tspan14" y="1776" x="-150">≥ 3.78</tspan>
+        <tspan id="tspan14" y="1776" x="-150">≥ 0.38</tspan>
       </text>
       <text id="text20" y="1826" x="-150">
-        <tspan id="tspan18" y="1826" x="-150">≥ 8.50</tspan>
+        <tspan id="tspan18" y="1826" x="-150">≥ 0.85</tspan>
       </text>
       <text id="text24" y="1876" x="-150">
-        <tspan id="tspan22" y="1876" x="-150">≥ 15.11</tspan>
+        <tspan id="tspan22" y="1876" x="-150">≥ 1.52</tspan>
+      </text>
+      <text x="-200" y="1926">
+        <tspan x="-200" y="1926">/ 100&#8201;000</tspan>
       </text>
     </g>
     <g id="legend-boxes">

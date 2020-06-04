@@ -5,25 +5,28 @@
       <rect id="rect30473" width="732.905" height="344.35" x="1236.223" y="28.35" ry="0" stroke-width="10" fill="none"/>
       <path d="m 1526.2403,312.9604 80.294,-139.0733" id="path3796" stroke-width=".5"/>
     </g>
-    <g id="g1003" transform="matrix(1.4223465,0,0,1.4223465,270.19427,-2249.2166)">
+    <g id="g1003" transform="matrix(1.4050023,0,0,1.4050023,262.33961,-2272.7177)">
       <g id="Text" font-size="30" font-family="Verdana" fill="#000">
         <text x="-200" y="1626">
           <tspan x="-200" y="1626">2020-06-03</tspan>
         </text>
         <text x="-150" y="1676">
-          <tspan x="-150" y="1676">&lt; 1526</tspan>
+          <tspan x="-150" y="1676">&lt; 153</tspan>
         </text>
         <text x="-150" y="1726">
-          <tspan x="-150" y="1726">≥ 1526</tspan>
+          <tspan x="-150" y="1726">≥ 153</tspan>
         </text>
         <text x="-150" y="1776">
-          <tspan x="-150" y="1776">≥ 2834</tspan>
+          <tspan x="-150" y="1776">≥ 283</tspan>
         </text>
         <text x="-150" y="1826">
-          <tspan x="-150" y="1826">≥ 5015</tspan>
+          <tspan x="-150" y="1826">≥ 502</tspan>
         </text>
         <text x="-150" y="1876">
-          <tspan x="-150" y="1876">≥ 8069</tspan>
+          <tspan x="-150" y="1876">≥ 807</tspan>
+        </text>
+        <text x="-200" y="1926">
+          <tspan x="-200" y="1926">/ 100&#8201;000</tspan>
         </text>
       </g>
       <g id="legend-boxes">

@@ -20,6 +20,9 @@
       <text x="-150" y="1876">
         <tspan x="-150" y="1876">level4</tspan>
       </text>
+      <text x="-200" y="1926">
+        <tspan x="-200" y="1926">/ 100&#8201;000</tspan>
+      </text>
     </g>
     <g id="legend-boxes">
       <path d="m -200 1646 h 40 v 40 h -40 z" fill="#feebe2"/>
